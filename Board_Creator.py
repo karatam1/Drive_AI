@@ -45,7 +45,7 @@ def blocks_gen(gen_board, n):
             z = random.sample(events, 1)
             gen_board[a][b] == z[0]
 
-            #blocks[gen_board[a][b]] = random.randint(8, 20)
+            blocks[gen_board[a][b]] = random.randint(8, 20)
             v+=1
 
     return gen_board
@@ -129,6 +129,20 @@ def traffic_move(gen_board, rules):
                         break
 
                     #if its not a road or a car, then its either land or a road block and it has to avoid it
+
+                #the traffic is set to go off the board, need to regenerate a position for it
+                #helps in de-cluttering the board
+                else:
+                    u1, u2 = 0,0
+                    while gen_board[u1][u2] != 1:
+                        u1 = random.randint(0, len(gen_board)-1)
+                        u2 = random.randint(0, len(gen_board)-1)
+
+                    gen_board[i][j] = 1
+                    positions[p] = [u1, u2]
+                    gen_board[u1][u2] = 2
+                    i, j = u1, u2
+              
 
     return gen_board
 
