@@ -12,23 +12,37 @@ main_frame.title("Drive_AI UI")
 main_frame.configure(bg = "SteelBlue1")
 
 
-def run_alg(new_board, n, epoch, alg, color_board):
+def run_alg_sss(new_board, n, alg, epoch, color_board):
         
-    #s1 = st.State_Space_Search(n, new_board)
     rules = bc.traffic_rules_gen(new_board)
 
     for i in range(epoch):
+        
         if i % 5 == 0:
+            #generates new blocks every 5 iterations
             new_board = bc.blocks_gen(new_board, n)
 
         new_board = bc.traffic_move(new_board, rules)
-        #new_board = s1.move(new_board)
         
         new_board = alg.move(new_board)
         
         bc.re_color_board(new_board, color_board, n)
         main_frame.update() #updates/refresh the main_frame
         time.sleep(0.3)
+        
+
+def run_alg_ga(new_board, n, alg, color_board):
+
+    #make the function call to the main GA_function that runs the entire operation
+    #pass in bc board creator object
+    #re_color board and traffics move, block generation, time.sleep() will occur over there instead
+    #display every 10th epoch
+    #either in the ga files or in main, print the epoch vs min_steps graph
+    rules = bc.traffic_rules_gen(new_board)
+    traffic = [color_board, rules]
+
+    alg.start(main_frame, new_board, bc, traffic)
+
 
 
 #processing functions
@@ -52,24 +66,34 @@ def control():
     for x in new_board:
         print(x)
 
-    #re-colors board based on the new_board specifications
+    #re-colors board based on the new_board specifications for the initial board preview
     bc.re_color_board(new_board, color_board, n)
     main_frame.update()
     time.sleep(0.7)
 
-    s1 = st.State_Space_Search(n, new_board)
-    g1 = ga.Genetic_Alg(n, new_board)
-    epoch = 2*n
 
+    #holds ga initialization data: generations, string_length (17*20 rules), population size, p_mutation, p_crossover
+    ga_data = [100, 340, 100, 0.005, 0.4]
+
+    s1 = st.State_Space_Search(n, new_board)
+
+    g1 = ga.Genetic_Alg(n, new_board, ga_data)
+
+    #run sss
     if ai_method == 1:
-        run_alg(new_board, n, epoch, s1, color_board)
+        #epoch = 25
+        epoch = 2*n
+        run_alg_sss(new_board, n, s1, epoch, color_board)
+    
+    #run ga
     elif ai_method == 2:
-        run_alg(new_board, n, epoch, g1, color_board)
+        run_alg_ga(new_board, n, g1, color_board)
     else:
         copy_board = new_board[:]
 
-        run_alg(new_board, n, epoch, s1, color_board)
-        run_alg(copy_board, n, epoch, g1, color_board)
+        run_alg_sss(new_board, n, s1, epoch, color_board)
+        run_alg_ga(copy_board, n, g1, color_board)
+
 
     #Display graph of epochs vs steps using matplotlib -  NEEDS IMPLEMENTATION
 
