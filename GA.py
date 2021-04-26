@@ -1,5 +1,7 @@
 import Sim
 import numpy as np
+import random
+import matplotlib.pyplot as mp
 
 class Genetic_Alg:
 
@@ -37,17 +39,35 @@ class Genetic_Alg:
     def start(self, main_frame, gen_board, bc, traffic):
         #Important step, always make sure local gen_board is updated to the latest gen_board
         self.gen_board = gen_board
+
+        #holds the minimum steps value at each epoch
+        minar = []
+        hitar = []
+        fd = open('data.txt', 'a')
+       
         
-        #runs for specified no. of generations 
+        #runs for specified number of generations
         for g in range(self.epoch):
             
-            #fit_arr contains the fitness of each population,   len(fit_arr) == pop_size
-            fit_arr = self.fitness(main_frame, bc, traffic)
+            #debug print statement
+            gg = "Epoch "+str(g+1)+" Hits : "
+            fd.write(gg)
+
+            #decides when to print the board
+            show = False
+            if g in [0, self.epoch/2, self.epoch-1]:
+                show = True
+
+            #fit_arr contains the fitness of each population,   len(fit_arr) == pop_size    
+            fit_arr, min_travel, hits = self.fitness(main_frame, bc, traffic, show)
             
 
-            #REMOVE BREAK AFTER EVERYTHING IS READY
-            break
-            #######################################
+            #adds the min_travel to the file
+            print("Epoch " + str(g+1) + " Hits: "+ str(hits) + " Min-Steps: " + str(min_travel))
+
+            minar.append(min_travel)
+            hitar.append(hits)
+            fd.write(str(hits)+ " Steps: " + str(min_travel)+"\n")
 
 
             #create a new empty population, this will under-go repopulation based on the fitness of the old population
@@ -61,10 +81,12 @@ class Genetic_Alg:
                 n1, n2 = tup[0], tup[1]             
                 
                 #save the 2 indexed population to separate variables
-                off1, off2 = self.population[n1], self.population[n2]
+                chr1, chr2 = self.population[n1], self.population[n2]
                 
-                #run cross-over on the candidates
-                chr1, chr2 = self.cross_over(off1, off2)
+
+                if np.random.rand() < self.p_crossover:
+                    #run cross-over on the candidates
+                    chr1, chr2 = self.cross_over(chr1, chr2)
 
                 #populate the new_population
                 new_population[i], new_population[i+1] = chr1, chr2       
@@ -76,21 +98,29 @@ class Genetic_Alg:
             #update the global population variable with the new population variable
             self.population = new_population
 
-            #calculate fitness of new population
-            fit_arr = self.fitness(main_frame, bc, traffic)
 
-            #update the global min_steps and corresponding chromosomes
-            for i in range(len(fit_arr)):
-                if fit_arr[i] < self.min_steps:
-                    self.min_steps = fit_arr[i]
-                    self.min_chromosome = self.population[i]
-            
             #update the color_board data row with the new min_steps
 
+        fd.write("\n")
+        fd.close()
+        print("Program Complete")
+
+        #x array for plot
+        gen_arr = [h for h in range(1, self.epoch+1)]
+
+        #plots epochs vs min_steps
+        mp.plot(gen_arr, minar) #epochs vs min-step at epoch
+        #mp.plot(gen_arr, hitar) #epochs vs no. of time reached target
+        mp.ylabel("Min-Steps to Destination")
+        mp.xlabel("Epochs (generation)")
+        mp.title("Optimization Plot")
+        mp.show()
 
 
 
-    def fitness(self, main_frame, bc, traffic):
+
+
+    def fitness(self, main_frame, bc, traffic, show):
         
         #extract the color_board and rules
         color_board, rules = traffic[0], traffic[1]
@@ -98,30 +128,37 @@ class Genetic_Alg:
         #creates the simulator object
         sim = Sim.Sim(self.gen_board)
 
-        #calls the simulator  (this is the only link between the Sim.py and GA.py file)
-        #steps = sim.move2(self.population, main_frame, bc, color_board, rules) #should be sim.simulator
-        #####
 
         #intializes the return array
         vals = np.zeros(self.psize)
         target = 0
         target_arr = []
 
-        #go through each chromosome in population
+
         for i in range(self.psize):
             
-            #print(self.population[i])
-            steps, hit = sim.simulator(self.gen_board, rules, bc, self.population[i], main_frame, color_board)
-            target+=hit
+            show_now = False
+            if i == 0 and show == True:
+                show_now = True
+ 
+            steps, hit = sim.simulator(self.gen_board, rules, bc, self.population[i], main_frame, color_board, show_now)
+
             vals[i] = steps
             if hit == 1:
                 target_arr.append(steps)
+        
 
-        print(vals)
-        print(max(vals), min(vals))
-        print("Hit target ",target, target_arr)
+        #this block of code counts how many times the agent reached the destination, if it never reached, it is set to a value
+        tp = 0
+        if len(target_arr) == 0:
+            tp = 0
+        else:
+            tp = max(target_arr)
 
-        return vals
+
+        return vals, tp, len(target_arr)
+
+
 
 
     def tournament(self,fitness,popsize):

@@ -15,26 +15,6 @@ class Sim:
         self.hit_target = []
 
 
-    def move2(self, population, main_frame, bc, color_board, rules):
-        ################# THIS IS ONLY FOR TESTING PURPOSES #############
-        #sets the agent's initial positions
-        i, j = self.curr[0], self.curr[1]
-        for k in range(20):
-            if k % 5 == 0:
-                #generates new blocks every 5 iterations
-                self.gen_board = bc.blocks_gen(self.gen_board, len(self.gen_board))
-            self.gen_board = bc.traffic_move(self.gen_board, rules)
-            self.gen_board[i][j] = 1
-            if i > 1:
-                i-=1
-            self.gen_board[i][j] = 9
-            self.curr = [i, j]
-            bc.re_color_board(self.gen_board, color_board, self.n)
-            main_frame.update() #updates/refresh the main_frame
-            time.sleep(0.3)
-        ##########################################################################
-            
-
 
     def move(self, i, j, orient, action):
         
@@ -79,16 +59,19 @@ class Sim:
         
 
 
-    def simulator(self, gen_board, rls, bc, chromosome, main_frame, color_board):
+    def simulator(self, gen_board, rls, bc, chromosome, main_frame, color_board, show):
         #the below lines ensure that the simulator sees the same board with the same traffic positions everytime 
         self.gen_board = gen_board
         board = copy.deepcopy(self.gen_board)
         t_rules = copy.deepcopy(rls) #not to get confused with rules in chromosome, this rule variable is for traffic
+
         positions = copy.deepcopy(bc.positions)
         curr = copy.copy(self.curr)
         orient = np.copy(self.orient)
         i, j = curr[0], curr[1]
         
+        visited = []
+    
 
         steps = 0
         #runs through a max run-time of n**2 positions (essentially the maximum time it can take to itertate through all positions of the board)
@@ -97,30 +80,57 @@ class Sim:
             #returns the field (in bits) as viewed from the current location 
             field = self.FOV(i, j, orient, board)
 
-            #print("field looks like ", field)
             #the first matching rule with field is returned from rule_find()
             first_rule = self.rule_find(field, chromosome)
             
             #checks if no rule found
             if first_rule == []:
                 #take random action among [up, left, right, wait]
+                
+                orient = random.sample(['U', 'L', 'R', 'D'], 1)[0]
                 act = random.sample(['Up', 'Le', 'Ri', 'Wi'], 1)[0]
+                
+                #seq is Up, Ri, Le, Wi
+              
+
 
             #rule was found
             else:
-                act = self.rule_act(list(first_rule[-2:]))
+                act = self.rule_act(list(first_rule[-2:]), i , j)
+                
+                #rewards since rule was found
+                steps+=1
+
 
             #gets the next position of the agent 
-            #print("the act is ", act)
             movements = self.move(i, j, orient, act)
-
             new_i, new_j, orient = movements[0], movements[1], movements[2]
 
-            #print(new_i, new_j, orient)
+            # IT WILL GET STUCK HERE
+            d = 0
+            while [new_i, new_j] in visited and d < 10:
+                orient = random.sample(['U', 'L', 'R', 'D'], 1)[0]
+                act = random.sample(['Up', 'Le', 'Ri', 'Wi'], 1)[0]
+                movements = self.move(i, j, orient, act)
+                new_i, new_j, orient = movements[0], movements[1], movements[2]
+                print("stuck in the while loop")
+                d+=1
+
+
+            #adds i and j to visited
+            visited.append([i, j])
+
 
             #checks if it hits the target
             if new_i == 0 and new_j == self.n-1:
+
+                #resets the traffic positions to the original after the simulation
+                bc.positions = positions
+
+                #rewards the agent
+                steps+= 1
                 return steps, 1
+
 
             #makes sure the new_i and new_j are not going out of bounds
             if new_i < 0 or new_i > self.n-1 or new_j < 0 or new_j > self.n-1:
@@ -128,11 +138,12 @@ class Sim:
                 new_i, new_j = min(new_i, self.n-1), min(new_j, self.n-1)
 
                 #penalizes due to the out of bounds issues
-                steps-=1
+                #steps-=1
 
             else:
                 #checks if the new spot is empty (based on new_i, new_j)
                 if board[new_i][new_j] == 1:
+
                     steps +=1
                     board[i][j] = 1 #resets the agents old position to 1 (road)
                     board[new_i][new_j] = 9 #sets the agents new position in the direction of action
@@ -146,11 +157,17 @@ class Sim:
             #moves the traffic
             board = bc.traffic_move(board, t_rules)
 
-        
-            #bc.re_color_board(board, color_board, self.n)
-            #main_frame.update() #updates/refresh the main_frame
-            #time.sleep(0.3)
-            #print(steps)
+            #checks if has to color the board
+            if show:
+                bc.re_color_board(board, color_board, self.n)
+                main_frame.update() #updates/refresh the main_frame
+                time.sleep(0.1)
+                
+
+        #resets the traffic positions to the original after the simulation
+        bc.positions = positions
+
+
         return steps, 0
 
 
@@ -206,7 +223,7 @@ class Sim:
         return []
 
 
-    def rule_act(self, action):
+    def rule_act(self, action, i , j):
 
         if action == [0, 0]:
             return 'Up'
@@ -217,4 +234,4 @@ class Sim:
         elif action == [1, 1]:
             return 'Wi'        
         else:
-            return random.sample(['Up', 'Le', 'Ri', 'Wi'], 1)
+            return random.sample(['Up', 'Le', 'Ri', 'Wi'], 1)[0]

@@ -41,6 +41,7 @@ def run_alg_ga(new_board, n, alg, color_board):
     rules = bc.traffic_rules_gen(new_board)
     traffic = [color_board, rules]
 
+
     alg.start(main_frame, new_board, bc, traffic)
 
 
@@ -63,8 +64,8 @@ def control():
     #creates new_board based on functions from Board_Creator
     new_board = bc.board_gen(n, density)   
     #prints debug board
-    for x in new_board:
-        print(x)
+    #for x in new_board:
+    #    print(x)
 
     #re-colors board based on the new_board specifications for the initial board preview
     bc.re_color_board(new_board, color_board, n)
@@ -73,7 +74,7 @@ def control():
 
 
     #holds ga initialization data: generations, string_length (17*20 rules), population size, p_mutation, p_crossover
-    ga_data = [100, 340, 100, 0.005, 0.4]
+    ga_data = [100, 850, 60, 0.001, 0.5]
 
     s1 = st.State_Space_Search(n, new_board)
 
@@ -82,7 +83,7 @@ def control():
     #run sss
     if ai_method == 1:
         #epoch = 25
-        epoch = 2*n
+        epoch = n**2
         run_alg_sss(new_board, n, s1, epoch, color_board)
     
     #run ga
@@ -95,7 +96,7 @@ def control():
         run_alg_ga(copy_board, n, g1, color_board)
 
 
-    #Display graph of epochs vs steps using matplotlib -  NEEDS IMPLEMENTATION
+
 
 
 ###################################################################################################################################################################
