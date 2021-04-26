@@ -1,6 +1,7 @@
 import time
 import copy
 import random
+import math
 import numpy as np
 
 class Sim:
@@ -73,7 +74,7 @@ class Sim:
         visited = []
     
 
-        steps = 0
+        steps, cost = 0,0
         #runs through a max run-time of n**2 positions (essentially the maximum time it can take to itertate through all positions of the board)
         for v in range(self.n**2):
             
@@ -89,36 +90,16 @@ class Sim:
                 
                 orient = random.sample(['U', 'L', 'R', 'D'], 1)[0]
                 act = random.sample(['Up', 'Le', 'Ri', 'Wi'], 1)[0]
-                
-                #seq is Up, Ri, Le, Wi
-              
 
 
             #rule was found
             else:
                 act = self.rule_act(list(first_rule[-2:]), i , j)
                 
-                #rewards since rule was found
-                steps+=1
-
 
             #gets the next position of the agent 
             movements = self.move(i, j, orient, act)
             new_i, new_j, orient = movements[0], movements[1], movements[2]
-
-            # IT WILL GET STUCK HERE
-            d = 0
-            while [new_i, new_j] in visited and d < 10:
-                orient = random.sample(['U', 'L', 'R', 'D'], 1)[0]
-                act = random.sample(['Up', 'Le', 'Ri', 'Wi'], 1)[0]
-                movements = self.move(i, j, orient, act)
-                new_i, new_j, orient = movements[0], movements[1], movements[2]
-                print("stuck in the while loop")
-                d+=1
-
-
-            #adds i and j to visited
-            visited.append([i, j])
 
 
             #checks if it hits the target
@@ -129,6 +110,7 @@ class Sim:
 
                 #rewards the agent
                 steps+= 1
+                cost+=10
                 return steps, 1
 
 
@@ -151,6 +133,7 @@ class Sim:
                     i, j = new_i, new_j
                     #code to re-color board goes here
                 
+
             if v % 10 == 0:
                 #generates new blocks every 10 iterations
                 board = bc.blocks_gen(board, self.n)
@@ -168,7 +151,22 @@ class Sim:
         bc.positions = positions
 
 
-        return steps, 0
+        #fitness function here
+
+        #euc_dist = (((n-j)^2) + ((n-j)^2))^((1/2))
+        euc_dist = math.sqrt(math.pow((self.n-i), 2) + math.pow((self.n-j), 2))
+
+        euc_dist/= math.sqrt((self.n**2) + (self.n**2))
+
+        
+        #n^2 - steps
+        max_diff = math.pow(self.n,2) - steps
+
+        max_diff /= math.pow(self.n, 2)
+
+
+
+        return euc_dist-max_diff, 0
 
 
 
