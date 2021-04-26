@@ -56,7 +56,7 @@ class Genetic_Alg:
             #run tournament on old population
             for i in range(0, self.psize, 2):
                 
-                tup = self.tournament()
+                tup = self.tournament(fit_arr,self.psize)
                 #extracts the index location of the new chromosomes to add
                 n1, n2 = tup[0], tup[1]             
                 
@@ -124,11 +124,39 @@ class Genetic_Alg:
         return vals
 
 
-    def tournament(self):
-        pass
+    def tournament(self,fitness,popsize):
+        # select first parent par1
+        cand1 = np.random.randint(popsize)      # candidate 1, 1st tourn., int
+        cand2 = cand1                           # candidate 2, 1st tourn., int
+        while cand2 == cand1:                   # until cand2 differs
+            cand2 = np.random.randint(popsize)   #   identify a second candidate
+        if fitness[cand1] > fitness[cand2]:     # if cand1 more fit than cand2 
+            par1 = cand1                         #   then first parent is cand1
+        else:                                   #   else first parent is cand2
+            par1 = cand2
+        # select second parent par2
+        cand1 = np.random.randint(popsize)      # candidate 1, 2nd tourn., int
+        cand2 = cand1                           # candidate 2, 2nd tourn., int
+        while cand2 == cand1:                   # until cand2 differs
+            cand2 = np.random.randint(popsize)   #   identify a second candidate
+        if fitness[cand1] > fitness[cand2]:     # if cand1 more fit than cand2 
+            par2 = cand1                         #   then 2nd parent par2 is cand1
+        else:                                   #   else 2nd parent par2 is cand2
+            par2 = cand2
+        return par1,par2
 
-    def cross_over(self):
-        pass
+    def cross_over(self, child1,child2):
+        # single point crossover
+        # cut locn to right of position (hence subtract 1)
+        locn = np.random.randint(0,self.str_len - 1)
+        tmp = np.copy(child1)       # save child1 copy, then do crossover
+        child1[locn+1:self.str_len] = child2[locn+1:self.str_len]
+        child2[locn+1:self.str_len] = tmp[locn+1:self.str_len]
+        return child1,child2
+        
 
-    def mutate_population(self):
-        pass
+    def mutate_population(self, pop):
+        whereMutate = np.random.rand(np.shape(pop)[0],np.shape(pop)[1])
+        whereMutate = np.where(whereMutate < self.p_mutation)
+        pop[whereMutate] = 1 - pop[whereMutate]
+        return pop
