@@ -40,9 +40,9 @@ def run_alg_ga(new_board, n, alg, color_board):
     #either in the ga files or in main, print the epoch vs min_steps graph
     rules = bc.traffic_rules_gen(new_board)
     traffic = [color_board, rules]
+    
 
-
-    alg.start(main_frame, new_board, bc, traffic)
+    alg.start(main_frame, info_frame, new_board, bc, traffic)
 
 
 
@@ -63,9 +63,7 @@ def control():
     
     #creates new_board based on functions from Board_Creator
     new_board = bc.board_gen(n, density)   
-    #prints debug board
-    #for x in new_board:
-    #    print(x)
+ 
 
     #re-colors board based on the new_board specifications for the initial board preview
     bc.re_color_board(new_board, color_board, n)
@@ -74,7 +72,7 @@ def control():
 
 
     #holds ga initialization data: generations, string_length (17*20 rules), population size, p_mutation, p_crossover
-    ga_data = [100, 850, 60, 0.001, 0.5]
+    ga_data = [50, 1300, 100, 0.05, 0.6]
 
     s1 = st.State_Space_Search(n, new_board)
 
@@ -114,8 +112,10 @@ info_frame.grid(row = 3, sticky = "nw")
 l1 = tk.Label(head_frame, text = "Choose the settings from the given options", bg = "SteelBlue1")
 l2 = tk.Label(input_frame, text = "Grid Size:")
 l3 = tk.Label(input_frame, text = "Density:")
-l4 = tk.Label(info_frame, text = "Epoch #")
-l5 = tk.Label(info_frame, text = "Min_steps:")
+l4 = tk.Label(info_frame, text = "Epoch # ")
+l5 = tk.Label(info_frame, text = "Max-Fitness: ")
+l6 = tk.Label(info_frame, text = "0")
+l7 = tk.Label(info_frame, text = "0.0")
 
 
 #variables
@@ -143,7 +143,9 @@ r1.grid(row = 0, column = 4)# line 2 left
 r2.grid(row = 0, column = 5)#line 2 left
 r3.grid(row = 0, column = 6)#line 2 left
 submit_button.grid(row = 0, column = 7)#line 2 left
-l4.grid(row = 0, column = 0, columnspan = 4)#line 3 left
-l5.grid(row = 0, column = 7)#line 3 left
+l4.grid(row = 0, column = 0)#line 3 left
+l6.grid(row = 0, column = 1)
+l5.grid(row = 0, column = 2)#line 3 left
+l7.grid(row = 0, column = 3)
 
 main_frame.mainloop()

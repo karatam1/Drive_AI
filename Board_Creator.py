@@ -217,3 +217,17 @@ def re_color_board(gen_board, color_board, n):
         x2 = 60
         c = 0
         r+=1
+
+
+
+# Create n*n board, each cell has an action
+# for i in range(ngens):
+    #generate_board()
+    
+    #calculate fitness
+            # running the simulation in n^2 runtime
+            # return the fitness
+    
+    #tournament
+    #crossover
+    #mutation

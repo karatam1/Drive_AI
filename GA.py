@@ -1,6 +1,7 @@
 import Sim
 import numpy as np
 import random
+import tkinter as tk
 import matplotlib.pyplot as mp
 
 class Genetic_Alg:
@@ -20,7 +21,7 @@ class Genetic_Alg:
         #----------------basic facts of the setup
         #each square on the grid can be one of [land:0, road:1, traffic: 2, block: -1]
         #the agent has at most 5 Field Of Views at any given time
-        #will be using 20 rules, each rule will be represented by a 17-bit string
+        #will be using 50 rules, each rule will be represented by a 17-bit string
         #the string can be broken into 15-bits: F.O.V + 2-bits: Action
 
 
@@ -36,39 +37,41 @@ class Genetic_Alg:
         self.min_path = []
         
 
-    def start(self, main_frame, gen_board, bc, traffic):
+    def start(self, main_frame, info_frame, gen_board, bc, traffic):
         #Important step, always make sure local gen_board is updated to the latest gen_board
         self.gen_board = gen_board
 
-        #holds the minimum steps value at each epoch
-        minar = []
-        hitar = []
+        #creates text file
         fd = open('data.txt', 'a')
        
-        
+        #keeps track of the max fitness for each population
+        opt_arr = []
+
+
         #runs for specified number of generations
         for g in range(self.epoch):
-            
-            #debug print statement
-            gg = "Epoch "+str(g+1)+" Hits : "
-            fd.write(gg)
-
+        
             #decides when to print the board
             show = False
             if g in [0, self.epoch/2, self.epoch-1]:
                 show = True
 
-            #fit_arr contains the fitness of each population,   len(fit_arr) == pop_size    
-            fit_arr, min_travel, hits = self.fitness(main_frame, bc, traffic, show)
-            
 
-            #adds the min_travel to the file
-            print("Epoch " + str(g+1) + " Hits: "+ str(hits) + " Min-Steps: " + str(min_travel))
+            #fit_arr contains the fitness of the population for the current generation,   len(fit_arr) == pop_size    
+            fit_arr, hits = self.fitness(main_frame, bc, traffic, show)
+        
 
-            minar.append(min_travel)
-            hitar.append(hits)
-            fd.write(str(hits)+ " Steps: " + str(min_travel)+"\n")
+            l8 = tk.Label(info_frame, text = str(g+1))
+            l9 = tk.Label(info_frame, text = str(max(fit_arr)))
+            l8.grid(row = 0, column = 1)#line 3 left
+            l9.grid(row = 0, column = 3, columnspan = 4)
+            info_frame.update()
 
+
+            #writes to the file
+            fd.write("Epoch " + str(g+1) + " Max-fitness: " + str(max(fit_arr)) + " Hits: " +str(hits)+ "\n")
+
+            opt_arr.append(max(fit_arr))
 
             #create a new empty population, this will under-go repopulation based on the fitness of the old population
             new_population = np.zeros((self.psize, self.str_len), dtype = 'int64')
@@ -108,15 +111,12 @@ class Genetic_Alg:
         #x array for plot
         gen_arr = [h for h in range(1, self.epoch+1)]
 
-        #plots epochs vs min_steps
-        mp.plot(gen_arr, minar) #epochs vs min-step at epoch
-        #mp.plot(gen_arr, hitar) #epochs vs no. of time reached target
-        mp.ylabel("Min-Steps to Destination")
+        #plots epochs vs max-fitness
+        mp.plot(gen_arr, opt_arr) #epochs vs best-fitness from each generation
+        mp.ylabel("Max-fitness")
         mp.xlabel("Epochs (generation)")
         mp.title("Optimization Plot")
         mp.show()
-
-
 
 
 
@@ -132,31 +132,19 @@ class Genetic_Alg:
         #intializes the return array
         vals = np.zeros(self.psize)
         target = 0
-        target_arr = []
-
 
         for i in range(self.psize):
             
+            #code to check when to re-color board
             show_now = False
             if i == 0 and show == True:
                 show_now = True
- 
+
             steps, hit = sim.simulator(self.gen_board, rules, bc, self.population[i], main_frame, color_board, show_now)
-
+            target+=hit
             vals[i] = steps
-            if hit == 1:
-                target_arr.append(steps)
-        
 
-        #this block of code counts how many times the agent reached the destination, if it never reached, it is set to a value
-        tp = 0
-        if len(target_arr) == 0:
-            tp = 0
-        else:
-            tp = max(target_arr)
-
-
-        return vals, tp, len(target_arr)
+        return vals, target 
 
 
 

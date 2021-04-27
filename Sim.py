@@ -71,8 +71,7 @@ class Sim:
         orient = np.copy(self.orient)
         i, j = curr[0], curr[1]
         
-        visited = []
-    
+        visited = []    
 
         steps, cost = 0,0
         #runs through a max run-time of n**2 positions (essentially the maximum time it can take to itertate through all positions of the board)
@@ -91,12 +90,12 @@ class Sim:
                 orient = random.sample(['U', 'L', 'R', 'D'], 1)[0]
                 act = random.sample(['Up', 'Le', 'Ri', 'Wi'], 1)[0]
 
-
+                steps-=1
             #rule was found
             else:
-                act = self.rule_act(list(first_rule[-2:]), i , j)
+                act = self.rule_act(list(first_rule[-3:]), i , j)
                 
-
+                steps+=1
             #gets the next position of the agent 
             movements = self.move(i, j, orient, act)
             new_i, new_j, orient = movements[0], movements[1], movements[2]
@@ -107,20 +106,17 @@ class Sim:
 
                 #resets the traffic positions to the original after the simulation
                 bc.positions = positions
+                
+                fit = self.fitCalc(new_i, new_j, steps, 50)
 
-                #rewards the agent
-                steps+= 1
-                cost+=10
-                return steps, 1
+                return fit, 1
+
 
 
             #makes sure the new_i and new_j are not going out of bounds
             if new_i < 0 or new_i > self.n-1 or new_j < 0 or new_j > self.n-1:
                 new_i, new_j = max(0, new_i), max(0, new_j) 
                 new_i, new_j = min(new_i, self.n-1), min(new_j, self.n-1)
-
-                #penalizes due to the out of bounds issues
-                #steps-=1
 
             else:
                 #checks if the new spot is empty (based on new_i, new_j)
@@ -131,7 +127,6 @@ class Sim:
                     board[new_i][new_j] = 9 #sets the agents new position in the direction of action
 
                     i, j = new_i, new_j
-                    #code to re-color board goes here
                 
 
             if v % 10 == 0:
@@ -140,33 +135,53 @@ class Sim:
             #moves the traffic
             board = bc.traffic_move(board, t_rules)
 
-            #checks if has to color the board
+            #checks if it has to color the board
             if show:
                 bc.re_color_board(board, color_board, self.n)
                 main_frame.update() #updates/refresh the main_frame
-                time.sleep(0.1)
+                time.sleep(0.05)
                 
 
         #resets the traffic positions to the original after the simulation
         bc.positions = positions
 
-
         #fitness function here
+        fit = self.fitCalc(i, j, steps, 0)
 
-        #euc_dist = (((n-j)^2) + ((n-j)^2))^((1/2))
-        euc_dist = math.sqrt(math.pow((self.n-i), 2) + math.pow((self.n-j), 2))
+        return fit, 0
 
-        euc_dist/= math.sqrt((self.n**2) + (self.n**2))
 
+
+
+
+
+
+    def fitCalc(self, i, j, steps, cost):#############################################################################
+
+        i = self.n - i
         
-        #n^2 - steps
+        #euc_dist = (((n-i)^2) + ((n-j)^2))^((1/2))
+        euc_dist = math.sqrt(math.pow((self.n-i), 2) + math.pow((self.n-j), 2))
+        #euc_dist/= math.sqrt((self.n**2) + (self.n**2))
+        #euc_dist*=70
+        max_dist = math.sqrt(math.pow((self.n-0), 2) + math.pow((self.n-0), 2))
+        
+
+        #(n^2 - steps) / n^2
         max_diff = math.pow(self.n,2) - steps
+        #max_diff /= math.pow(self.n, 2)
+        
+        return (max_dist - euc_dist) + max_diff
+        
+        # if cost == 1:#it reached the target
+        #     return round((euc_dist + (max_diff)),2)
+        # else:#it did not reach the target
+        #     return round((max_dist - euc_dist),2)
 
-        max_diff /= math.pow(self.n, 2)
+        #######################################################################################################        
 
 
 
-        return euc_dist-max_diff, 0
 
 
 
@@ -197,15 +212,15 @@ class Sim:
         ret = []
         for r in field:
             if r == 0: # it is land
-                ret+=[0, 0, 0]
+                ret+=[0, 0]
             elif r == 1: # it is a road
-                ret+=[0, 0, 1]
+                ret+=[0, 1]
             elif r == 2: # it is a traffic piece
-                ret+=[0, 1, 0]
+                ret+=[1, 0]
             elif r < 0: # it is some sort of traffic block
-                ret+=[0, 1, 1]
+                ret+=[1, 1]
             else:
-                ret+=[2, 2, 2] #it is at an edge
+                ret+=[2, 2] #it is at an edge
         return ret
 
 
@@ -214,22 +229,22 @@ class Sim:
         if field == []:
             return field
 
-        for i in range(0, len(chromosome), 17):
-            same = field == list(chromosome[i:i+15])
+        for i in range(0, len(chromosome), 13):
+            same = field == list(chromosome[i:i+10])
             if same:
-                return chromosome[i:i+17]
+                return chromosome[i:i+13]
         return []
 
 
     def rule_act(self, action, i , j):
 
-        if action == [0, 0]:
+        if sum(action) == 2:
             return 'Up'
-        elif action == [0, 1]:
+        elif sum(action) == 1:
             return 'Le'
-        elif action == [1, 0]:
+        elif sum(action) == 0:
             return 'Ri'
-        elif action == [1, 1]:
+        elif sum(action) == 3:
             return 'Wi'        
         else:
             return random.sample(['Up', 'Le', 'Ri', 'Wi'], 1)[0]
