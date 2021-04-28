@@ -106,10 +106,10 @@ class Genetic_Alg:
         fd.close()
 
 
-        for x in self.population:
-            for i in range(0, len(x), 12):
-                print(self.re_code(list(x[i:i+12])))
-            print()
+        # for x in self.population:
+        #     for i in range(0, len(x), 12):
+        #         print(self.re_code(list(x[i:i+12])))
+        #     print()
 
 
         print("Program Complete")
@@ -165,6 +165,7 @@ class Genetic_Alg:
         #intializes the return array
         vals = np.zeros(self.psize)
         target = 0
+        match_arr = []
 
         for i in range(self.psize):
             
@@ -173,11 +174,14 @@ class Genetic_Alg:
             if i == 0 and show == True:
                 show_now = True
 
-            steps, hit = sim.simulator(self.gen_board, rules, bc, self.population[i], main_frame, color_board, show_now)
+            steps, hit, match = sim.simulator(self.gen_board, rules, bc, list(self.population[i]), main_frame, color_board, show_now)
             target+=hit
             vals[i] = steps
+            if match != 0:
+                match_arr.append(match)
 
-        return vals, target 
+        print(len(match_arr))
+        return vals, target
 
 
 

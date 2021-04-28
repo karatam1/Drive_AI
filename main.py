@@ -84,7 +84,7 @@ def control():
 
 
     #holds ga initialization data: generations, string_length (17*20 rules), population size, p_mutation, p_crossover
-    ga_data = [50, 1200, 80, 0.04, 0.7]
+    ga_data = [100, 3400, 100, 0.01, 0.4]
 
     s1 = st.State_Space_Search(n, new_board)
 

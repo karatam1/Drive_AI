@@ -72,7 +72,7 @@ class Sim:
         i, j = curr[0], curr[1]
         
         visited = []    
-
+        match = 0
         steps, cost = 0,0
         #runs through a max run-time of n**2 positions (essentially the maximum time it can take to itertate through all positions of the board)
         for v in range(self.n**2):
@@ -81,9 +81,11 @@ class Sim:
             #returns the field (in bits) as viewed from the current location 
             field = self.FOV(i, j, orient, board)
 
+
             #the first matching rule with field is returned from rule_find()
-            first_rule = self.rule_find(field, chromosome)
+            first_rule = self.rule_find(field, list(chromosome))
             
+
             #checks if no rule found
             if first_rule == []:
                 #take random action among [up, left, right, wait]
@@ -92,18 +94,19 @@ class Sim:
                 act = random.sample(['Up', 'Ri', 'Le' 'Wi'], 1)[0]
                 #checks if up is available
 
-                if 0 <= i <= self.n-1 and 0 <= j+1 <= self.n-1:
-                    if board[i][j+1] == 1:
-                        act = 'Ri'
+                # if 0 <= i <= self.n-1 and 0 <= j+1 <= self.n-1:
+                #     if board[i][j+1] == 1:
+                #         act = 'Ri'
 
-                if 0 <= i-1 <= self.n-1 and 0 <= j <= self.n-1:
-                    if board[i-1][j] == 1:
-                        act = 'Up'
+                # if 0 <= i-1 <= self.n-1 and 0 <= j <= self.n-1:
+                #     if board[i-1][j] == 1:
+                #         act = 'Up'
 
-                #steps-=1
             #rule was found
             else:
-                print("rule matched")
+                #print("rule matched")
+                match+=1
+
                 act = self.rule_act(list(first_rule[-2:]), i , j)
                 
                 #steps+=1
@@ -121,7 +124,7 @@ class Sim:
                 
                 fit = self.fitCalc(new_i, new_j, steps, 50)
 
-                return fit, 1
+                return fit, 1, match
 
 
             #makes sure the new_i and new_j are not going out of bounds
@@ -160,7 +163,7 @@ class Sim:
         #fitness function here
         fit = self.fitCalc(i, j, steps, 0)
 
-        return fit, 0
+        return fit, 0, match
 
 
 
@@ -187,29 +190,42 @@ class Sim:
 
 
 
-
-
-
-
     def FOV(self, i, j, orient, board):
 
-        #agent is not at the edge
-        if 1 <= i < self.n-1 and 1 <= j < self.n-1:
-            if orient == 'U':
-                return self.field_conv([board[i][j-1], board[i-1][j-1], board[i-1][j], board[i-1][j+1], board[i][j+1]])
+        ret = []
+        # #agent is not at the edge
+        # if 1 <= i < self.n-1 and 1 <= j < self.n-1:
+        #     if orient == 'U':
+        #         return self.field_conv([board[i][j-1], board[i-1][j-1], board[i-1][j], board[i-1][j+1], board[i][j+1]])
 
-            elif orient == 'L':
-                return self.field_conv([board[i+1][j], board[i+1][j-1], board[i][j-1], board[i-1][j-1], board[i-1][j]])
+        #     elif orient == 'L':
+        #         return self.field_conv([board[i+1][j], board[i+1][j-1], board[i][j-1], board[i-1][j-1], board[i-1][j]])
 
-            elif orient == 'R':
-                return self.field_conv([board[i-1][j], board[i-1][j+1], board[i][j+1], board[i+1][j+1], board[i+1][j]])
+        #     elif orient == 'R':
+        #         return self.field_conv([board[i-1][j], board[i-1][j+1], board[i][j+1], board[i+1][j+1], board[i+1][j]])
 
-            elif orient == 'D':
-                return self.field_conv([board[i][j+1], board[i+1][j+1], board[i+1][j], board[i+1][j-1], board[i][j-1]])
-            
-        #checks if the agent is at the edge/boundary of the board
-        else:
-            return self.field_conv([9,9,9,9,9])
+        #     elif orient == 'D':
+        #         return self.field_conv([board[i][j+1], board[i+1][j+1], board[i+1][j], board[i+1][j-1], board[i][j-1]])
+        
+        #else: #agent is at an edge
+        arr = []
+        if orient == 'U':
+            arr = [[0, -1], [-1, -1], [-1, 0], [-1, 1], [0,1]]
+        elif orient == 'L':
+            arr = [[1, 0], [1, -1], [0, -1], [-1, -1], [-1, 0]]
+        elif orient == 'R':
+            arr = [[-1,0], [-1, 1], [0, 1], [1, 1], [1, 0]]
+        elif orient == 'D':
+            arr = [[0, 1], [1,1], [1,0], [1, -1], [0, -1]]
+
+        for x in arr:
+            #checks if the position is in the board      
+            if 0 <= i+x[0] <= self.n-1 and 0 <= j+x[1] <= self.n-1:
+                ret.append(board[i+x[0]][j+x[1]])
+            else:# it is not in board
+                ret.append(5)
+        return self.field_conv(ret)
+
 
 
     def field_conv(self, field):
@@ -217,27 +233,25 @@ class Sim:
         ret = []
         for r in field:
             if r == 0: # it is land
-                ret+=[0, 0]
+                ret+=[0, 0, 0]
             elif r == 1: # it is a road
-                ret+=[0, 1]
+                ret+=[0, 0, 1]
             elif r == 2: # it is a traffic piece
-                ret+=[1, 0]
+                ret+=[0, 1, 0]
             elif r < 0: # it is some sort of traffic block
-                ret+=[1, 1]
-            else:
-                ret+=[2, 2] #it is at an edge
+                ret+=[0, 1, 1]
+            elif r == 5: # it is a wall
+                #print("matched a wall")
+                ret+=[1, 0, 0]
         return ret
 
 
     def rule_find(self, field, chromosome):
 
-        if field == []:
-            return field
-
-        for i in range(0, len(chromosome), 12):
-            same = field == list(chromosome[i:i+10])
-            if same:
-                return chromosome[i:i+12]
+        for i in range(0, len(chromosome), 17):
+            if field == (chromosome[i:i+15]):
+                #print("rule matched")
+                return chromosome[i:i+17]
         return []
 
 
