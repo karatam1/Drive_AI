@@ -77,6 +77,7 @@ class Sim:
         #runs through a max run-time of n**2 positions (essentially the maximum time it can take to itertate through all positions of the board)
         for v in range(self.n**2):
             
+            new_i, new_j = 0, 0
             #returns the field (in bits) as viewed from the current location 
             field = self.FOV(i, j, orient, board)
 
@@ -86,13 +87,23 @@ class Sim:
             #checks if no rule found
             if first_rule == []:
                 #take random action among [up, left, right, wait]
-                
+                #orient = 'U'
                 orient = random.sample(['U', 'L', 'R', 'D'], 1)[0]
-                act = random.sample(['Up', 'Ri', 'Le', 'Wi'], 1)[0]
+                act = random.sample(['Up', 'Ri', 'Le' 'Wi'], 1)[0]
+                #checks if up is available
+
+                if 0 <= i <= self.n-1 and 0 <= j+1 <= self.n-1:
+                    if board[i][j+1] == 1:
+                        act = 'Ri'
+
+                if 0 <= i-1 <= self.n-1 and 0 <= j <= self.n-1:
+                    if board[i-1][j] == 1:
+                        act = 'Up'
 
                 #steps-=1
             #rule was found
             else:
+                print("rule matched")
                 act = self.rule_act(list(first_rule[-2:]), i , j)
                 
                 #steps+=1

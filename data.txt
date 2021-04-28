@@ -1,165 +1,555 @@
-Epoch 1 Max-fitness: 13.14 Hits: 1
-Epoch 2 Max-fitness: 10.98 Hits: 0
-Epoch 3 Max-fitness: 11.31 Hits: 0
-Epoch 4 Max-fitness: 22.14 Hits: 1
-Epoch 5 Max-fitness: 12.14 Hits: 0
-Epoch 6 Max-fitness: 10.54 Hits: 0
-Epoch 7 Max-fitness: 23.14 Hits: 1
-Epoch 8 Max-fitness: 10.54 Hits: 0
-Epoch 9 Max-fitness: 9.04 Hits: 0
-Epoch 10 Max-fitness: 17.14 Hits: 1
-Epoch 11 Max-fitness: 28.14 Hits: 2
-Epoch 12 Max-fitness: 38.14 Hits: 1
-Epoch 13 Max-fitness: 9.67 Hits: 0
-Epoch 14 Max-fitness: 10.54 Hits: 0
-Epoch 15 Max-fitness: 35.14 Hits: 1
-Epoch 16 Max-fitness: 32.14 Hits: 2
-Epoch 17 Max-fitness: 27.14 Hits: 1
-Epoch 18 Max-fitness: 49.14 Hits: 2
-Epoch 19 Max-fitness: 12.14 Hits: 0
-Epoch 20 Max-fitness: 16.14 Hits: 1
-Epoch 21 Max-fitness: 19.14 Hits: 1
-Epoch 22 Max-fitness: 45.14 Hits: 1
-Epoch 23 Max-fitness: 12.73 Hits: 0
-Epoch 24 Max-fitness: 10.02 Hits: 0
-Epoch 25 Max-fitness: 11.91 Hits: 0
-Epoch 26 Max-fitness: 11.91 Hits: 0
-Epoch 27 Max-fitness: 10.98 Hits: 0
-Epoch 28 Max-fitness: 10.54 Hits: 0
-Epoch 29 Max-fitness: 9.9 Hits: 0
-Epoch 30 Max-fitness: 31.14 Hits: 1
-Epoch 31 Max-fitness: 8.31 Hits: 0
-Epoch 32 Max-fitness: 61.14 Hits: 1
-Epoch 33 Max-fitness: 34.14 Hits: 1
-Epoch 34 Max-fitness: 10.98 Hits: 0
-Epoch 35 Max-fitness: 64.14 Hits: 2
-Epoch 36 Max-fitness: 7.82 Hits: 0
-Epoch 37 Max-fitness: 12.14 Hits: 0
-Epoch 38 Max-fitness: 10.14 Hits: 0
-Epoch 39 Max-fitness: 9.14 Hits: 0
-Epoch 40 Max-fitness: 25.14 Hits: 1
-Epoch 41 Max-fitness: 32.14 Hits: 1
-Epoch 42 Max-fitness: 11.31 Hits: 0
-Epoch 43 Max-fitness: 11.91 Hits: 0
-Epoch 44 Max-fitness: 9.04 Hits: 0
-Epoch 45 Max-fitness: 27.14 Hits: 1
-Epoch 46 Max-fitness: 11.31 Hits: 0
-Epoch 47 Max-fitness: 24.14 Hits: 1
-Epoch 48 Max-fitness: 9.14 Hits: 0
-Epoch 49 Max-fitness: 12.14 Hits: 0
-Epoch 50 Max-fitness: 9.14 Hits: 0
+Epoch 1 Max-fitness: 9.67 Avg. Fitness: 3.5358 Hits: 0
+Epoch 2 Max-fitness: 12.14 Avg. Fitness: 3.5615 Hits: 0
+Epoch 3 Max-fitness: 10.14 Avg. Fitness: 3.8331 Hits: 0
+Epoch 4 Max-fitness: 9.9 Avg. Fitness: 3.7923 Hits: 0
+Epoch 5 Max-fitness: 12.73 Avg. Fitness: 4.2164 Hits: 0
+Epoch 6 Max-fitness: 29.14 Avg. Fitness: 4.3246 Hits: 1
+Epoch 7 Max-fitness: 11.14 Avg. Fitness: 3.922 Hits: 0
+Epoch 8 Max-fitness: 26.14 Avg. Fitness: 4.5683 Hits: 1
+Epoch 9 Max-fitness: 9.9 Avg. Fitness: 3.5817 Hits: 0
+Epoch 10 Max-fitness: 30.14 Avg. Fitness: 3.9091 Hits: 1
+Epoch 11 Max-fitness: 12.73 Avg. Fitness: 3.7173 Hits: 0
+Epoch 12 Max-fitness: 10.14 Avg. Fitness: 3.8989 Hits: 0
+Epoch 13 Max-fitness: 9.04 Avg. Fitness: 3.3949 Hits: 0
+Epoch 14 Max-fitness: 33.14 Avg. Fitness: 3.7745 Hits: 1
+Epoch 15 Max-fitness: 9.04 Avg. Fitness: 3.484 Hits: 0
+Epoch 16 Max-fitness: 9.14 Avg. Fitness: 3.8407 Hits: 0
+Epoch 17 Max-fitness: 12.14 Avg. Fitness: 3.6547 Hits: 0
+Epoch 18 Max-fitness: 11.31 Avg. Fitness: 3.7961 Hits: 0
+Epoch 19 Max-fitness: 19.14 Avg. Fitness: 3.9762 Hits: 1
+Epoch 20 Max-fitness: 24.14 Avg. Fitness: 3.8493 Hits: 1
+Epoch 21 Max-fitness: 12.14 Avg. Fitness: 4.4549 Hits: 0
+Epoch 22 Max-fitness: 12.14 Avg. Fitness: 4.0109 Hits: 0
+Epoch 23 Max-fitness: 11.31 Avg. Fitness: 3.7462 Hits: 0
+Epoch 24 Max-fitness: 26.14 Avg. Fitness: 4.1125 Hits: 1
+Epoch 25 Max-fitness: 17.14 Avg. Fitness: 4.0107 Hits: 1
+Epoch 26 Max-fitness: 36.14 Avg. Fitness: 4.27 Hits: 1
+Epoch 27 Max-fitness: 12.14 Avg. Fitness: 4.1639 Hits: 0
+Epoch 28 Max-fitness: 10.54 Avg. Fitness: 3.679 Hits: 0
+Epoch 29 Max-fitness: 24.14 Avg. Fitness: 3.6851 Hits: 1
+Epoch 30 Max-fitness: 12.14 Avg. Fitness: 3.9932 Hits: 0
+Epoch 31 Max-fitness: 9.9 Avg. Fitness: 3.6649 Hits: 0
+Epoch 32 Max-fitness: 10.98 Avg. Fitness: 3.7197 Hits: 0
+Epoch 33 Max-fitness: 24.14 Avg. Fitness: 4.4776 Hits: 1
+Epoch 34 Max-fitness: 11.91 Avg. Fitness: 4.089 Hits: 0
+Epoch 35 Max-fitness: 12.14 Avg. Fitness: 3.7314 Hits: 0
+Epoch 36 Max-fitness: 11.14 Avg. Fitness: 4.0318 Hits: 0
+Epoch 37 Max-fitness: 9.04 Avg. Fitness: 3.3535 Hits: 0
+Epoch 38 Max-fitness: 11.31 Avg. Fitness: 3.829 Hits: 0
+Epoch 39 Max-fitness: 20.14 Avg. Fitness: 3.6897 Hits: 1
+Epoch 40 Max-fitness: 9.9 Avg. Fitness: 4.0538 Hits: 0
+Epoch 41 Max-fitness: 15.14 Avg. Fitness: 4.178 Hits: 1
+Epoch 42 Max-fitness: 10.98 Avg. Fitness: 4.185 Hits: 0
+Epoch 43 Max-fitness: 47.14 Avg. Fitness: 4.5299 Hits: 1
+Epoch 44 Max-fitness: 27.14 Avg. Fitness: 3.8253 Hits: 1
+Epoch 45 Max-fitness: 24.14 Avg. Fitness: 4.3015 Hits: 2
+Epoch 46 Max-fitness: 11.91 Avg. Fitness: 3.7224 Hits: 0
+Epoch 47 Max-fitness: 11.91 Avg. Fitness: 4.1764 Hits: 0
+Epoch 48 Max-fitness: 10.02 Avg. Fitness: 3.4396 Hits: 0
+Epoch 49 Max-fitness: 21.14 Avg. Fitness: 3.6511 Hits: 1
+Epoch 50 Max-fitness: 11.14 Avg. Fitness: 3.9801 Hits: 0
 
-Epoch 1 Max-fitness: 27.14 Hits: 2
-Epoch 2 Max-fitness: 17.14 Hits: 1
-Epoch 3 Max-fitness: 43.14 Hits: 5
-Epoch 4 Max-fitness: 10.98 Hits: 0
-Epoch 5 Max-fitness: 9.14 Hits: 0
-Epoch 6 Max-fitness: 29.14 Hits: 1
-Epoch 7 Max-fitness: 11.14 Hits: 0
-Epoch 8 Max-fitness: 11.91 Hits: 0
-Epoch 9 Max-fitness: 36.14 Hits: 1
-Epoch 10 Max-fitness: 50.14 Hits: 1
-Epoch 11 Max-fitness: 53.14 Hits: 1
-Epoch 12 Max-fitness: 11.91 Hits: 0
-Epoch 13 Max-fitness: 15.14 Hits: 1
-Epoch 14 Max-fitness: 9.9 Hits: 0
-Epoch 15 Max-fitness: 11.91 Hits: 0
-Epoch 16 Max-fitness: 9.04 Hits: 0
-Epoch 17 Max-fitness: 16.14 Hits: 1
-Epoch 18 Max-fitness: 11.31 Hits: 0
-Epoch 19 Max-fitness: 11.31 Hits: 0
-Epoch 20 Max-fitness: 11.14 Hits: 0
-Epoch 21 Max-fitness: 9.9 Hits: 0
-Epoch 22 Max-fitness: 68.14 Hits: 5
-Epoch 23 Max-fitness: 33.14 Hits: 1
-Epoch 24 Max-fitness: 21.14 Hits: 1
-Epoch 25 Max-fitness: 26.14 Hits: 1
-Epoch 26 Max-fitness: 11.91 Hits: 0
-Epoch 27 Max-fitness: 11.91 Hits: 0
-Epoch 28 Max-fitness: 11.14 Hits: 0
-Epoch 29 Max-fitness: 17.14 Hits: 1
-Epoch 30 Max-fitness: 11.14 Hits: 0
-Epoch 31 Max-fitness: 26.14 Hits: 1
-Epoch 32 Max-fitness: 30.14 Hits: 1
-Epoch 33 Max-fitness: 14.14 Hits: 1
-Epoch 34 Max-fitness: 42.14 Hits: 2
-Epoch 35 Max-fitness: 26.14 Hits: 1
-Epoch 36 Max-fitness: 33.14 Hits: 2
-Epoch 37 Max-fitness: 10.98 Hits: 0
-Epoch 38 Max-fitness: 11.14 Hits: 0
-Epoch 39 Max-fitness: 11.31 Hits: 0
-Epoch 40 Max-fitness: 46.14 Hits: 1
-Epoch 41 Max-fitness: 25.14 Hits: 1
-Epoch 42 Max-fitness: 55.14 Hits: 1
-Epoch 43 Max-fitness: 9.67 Hits: 0
-Epoch 44 Max-fitness: 21.14 Hits: 1
-Epoch 45 Max-fitness: 12.14 Hits: 0
-Epoch 46 Max-fitness: 10.14 Hits: 0
-Epoch 47 Max-fitness: 11.14 Hits: 0
-Epoch 48 Max-fitness: 19.14 Hits: 1
-Epoch 49 Max-fitness: 32.14 Hits: 1
-Epoch 50 Max-fitness: 9.9 Hits: 0
+Epoch 1 Max-fitness: 16.14 Avg. Fitness: 4.4129 Hits: 1
+Epoch 2 Max-fitness: 9.67 Avg. Fitness: 4.2599 Hits: 0
+Epoch 3 Max-fitness: 10.54 Avg. Fitness: 4.3223 Hits: 0
+Epoch 4 Max-fitness: 20.14 Avg. Fitness: 4.755 Hits: 1
+Epoch 5 Max-fitness: 11.14 Avg. Fitness: 4.2016 Hits: 0
+Epoch 6 Max-fitness: 64.14 Avg. Fitness: 5.5043 Hits: 2
+Epoch 7 Max-fitness: 11.91 Avg. Fitness: 4.472 Hits: 0
+Epoch 8 Max-fitness: 10.98 Avg. Fitness: 4.5035 Hits: 0
+Epoch 9 Max-fitness: 40.14 Avg. Fitness: 4.8188 Hits: 1
+Epoch 10 Max-fitness: 38.14 Avg. Fitness: 4.9606 Hits: 1
+Epoch 11 Max-fitness: 13.14 Avg. Fitness: 4.637 Hits: 1
+Epoch 12 Max-fitness: 10.14 Avg. Fitness: 4.6096 Hits: 0
+Epoch 13 Max-fitness: 19.14 Avg. Fitness: 4.6741 Hits: 2
+Epoch 14 Max-fitness: 24.14 Avg. Fitness: 4.5152 Hits: 1
+Epoch 15 Max-fitness: 13.14 Avg. Fitness: 4.0416 Hits: 1
+Epoch 16 Max-fitness: 18.14 Avg. Fitness: 4.6856 Hits: 1
+Epoch 17 Max-fitness: 24.14 Avg. Fitness: 4.5718 Hits: 1
+Epoch 18 Max-fitness: 12.14 Avg. Fitness: 4.5425 Hits: 0
+Epoch 19 Max-fitness: 22.14 Avg. Fitness: 4.6737 Hits: 1
+Epoch 20 Max-fitness: 10.54 Avg. Fitness: 4.2261 Hits: 0
+Epoch 21 Max-fitness: 12.14 Avg. Fitness: 4.4954 Hits: 0
+Epoch 22 Max-fitness: 24.14 Avg. Fitness: 4.6244 Hits: 2
+Epoch 23 Max-fitness: 18.14 Avg. Fitness: 4.4924 Hits: 1
+Epoch 24 Max-fitness: 12.14 Avg. Fitness: 4.0764 Hits: 0
+Epoch 25 Max-fitness: 11.31 Avg. Fitness: 4.2841 Hits: 0
+Epoch 26 Max-fitness: 11.91 Avg. Fitness: 4.2672 Hits: 0
+Epoch 27 Max-fitness: 9.14 Avg. Fitness: 4.1584 Hits: 0
+Epoch 28 Max-fitness: 10.14 Avg. Fitness: 4.5721 Hits: 0
+Epoch 29 Max-fitness: 13.14 Avg. Fitness: 4.5196 Hits: 1
+Epoch 30 Max-fitness: 10.98 Avg. Fitness: 4.3921 Hits: 0
+Epoch 31 Max-fitness: 13.14 Avg. Fitness: 4.0837 Hits: 1
+Epoch 32 Max-fitness: 9.9 Avg. Fitness: 4.5226 Hits: 0
+Epoch 33 Max-fitness: 9.9 Avg. Fitness: 4.3814 Hits: 0
+Epoch 34 Max-fitness: 11.31 Avg. Fitness: 4.61 Hits: 0
+Epoch 35 Max-fitness: 9.04 Avg. Fitness: 4.49 Hits: 0
+Epoch 36 Max-fitness: 28.14 Avg. Fitness: 4.3443 Hits: 1
+Epoch 37 Max-fitness: 17.14 Avg. Fitness: 4.4886 Hits: 1
+Epoch 38 Max-fitness: 11.14 Avg. Fitness: 4.2993 Hits: 0
+Epoch 39 Max-fitness: 12.73 Avg. Fitness: 4.5568 Hits: 0
+Epoch 40 Max-fitness: 11.31 Avg. Fitness: 4.2886 Hits: 0
+Epoch 41 Max-fitness: 73.14 Avg. Fitness: 5.2901 Hits: 1
+Epoch 42 Max-fitness: 40.14 Avg. Fitness: 4.7127 Hits: 1
+Epoch 43 Max-fitness: 44.14 Avg. Fitness: 4.6595 Hits: 1
+Epoch 44 Max-fitness: 42.14 Avg. Fitness: 4.77 Hits: 1
+Epoch 45 Max-fitness: 11.31 Avg. Fitness: 4.5631 Hits: 0
+Epoch 46 Max-fitness: 12.14 Avg. Fitness: 4.0631 Hits: 0
+Epoch 47 Max-fitness: 25.14 Avg. Fitness: 4.6788 Hits: 1
+Epoch 48 Max-fitness: 11.31 Avg. Fitness: 4.2753 Hits: 0
+Epoch 49 Max-fitness: 11.91 Avg. Fitness: 4.4883 Hits: 0
+Epoch 50 Max-fitness: 11.91 Avg. Fitness: 4.0788 Hits: 0
 
-Epoch 1 Max-fitness: 11.91 Hits: 0
-Epoch 2 Max-fitness: 25.14 Hits: 3
-Epoch 3 Max-fitness: 51.14 Hits: 2
-Epoch 4 Max-fitness: 11.31 Hits: 0
-Epoch 5 Max-fitness: 11.14 Hits: 0
-Epoch 6 Max-fitness: 12.73 Hits: 0
-Epoch 7 Max-fitness: 18.14 Hits: 2
-Epoch 8 Max-fitness: 21.14 Hits: 1
-Epoch 9 Max-fitness: 30.14 Hits: 1
-Epoch 10 Max-fitness: 27.14 Hits: 1
-Epoch 11 Max-fitness: 29.14 Hits: 1
-Epoch 12 Max-fitness: 35.14 Hits: 1
-Epoch 13 Max-fitness: 14.14 Hits: 1
-Epoch 14 Max-fitness: 12.73 Hits: 0
-Epoch 15 Max-fitness: 37.14 Hits: 1
-Epoch 16 Max-fitness: 15.14 Hits: 1
-Epoch 17 Max-fitness: 10.54 Hits: 0
-Epoch 18 Max-fitness: 13.14 Hits: 1
-Epoch 19 Max-fitness: 37.14 Hits: 1
-Epoch 20 Max-fitness: 11.31 Hits: 0
-Epoch 21 Max-fitness: 29.14 Hits: 2
-Epoch 22 Max-fitness: 24.14 Hits: 1
-Epoch 23 Max-fitness: 11.91 Hits: 0
-Epoch 24 Max-fitness: 11.91 Hits: 0
-Epoch 25 Max-fitness: 15.14 Hits: 1
-Epoch 26 Max-fitness: 38.14 Hits: 1
-Epoch 27 Max-fitness: 46.14 Hits: 1
-Epoch 28 Max-fitness: 12.14 Hits: 0
-Epoch 29 Max-fitness: 54.14 Hits: 1
-Epoch 30 Max-fitness: 49.14 Hits: 2
-Epoch 31 Max-fitness: 48.14 Hits: 2
-Epoch 32 Max-fitness: 12.73 Hits: 0
-Epoch 33 Max-fitness: 16.14 Hits: 1
-Epoch 34 Max-fitness: 10.98 Hits: 0
-Epoch 35 Max-fitness: 13.14 Hits: 1
-Epoch 36 Max-fitness: 50.14 Hits: 4
-Epoch 37 Max-fitness: 19.14 Hits: 1
-Epoch 38 Max-fitness: 22.14 Hits: 1
-Epoch 39 Max-fitness: 12.14 Hits: 0
-Epoch 40 Max-fitness: 10.54 Hits: 0
-Epoch 41 Max-fitness: 9.67 Hits: 0
-Epoch 42 Max-fitness: 10.54 Hits: 0
-Epoch 43 Max-fitness: 12.73 Hits: 0
-Epoch 44 Max-fitness: 10.14 Hits: 0
-Epoch 45 Max-fitness: 11.31 Hits: 0
-Epoch 46 Max-fitness: 10.02 Hits: 0
-Epoch 47 Max-fitness: 11.31 Hits: 0
-Epoch 48 Max-fitness: 23.14 Hits: 1
-Epoch 49 Max-fitness: 41.14 Hits: 2
-Epoch 50 Max-fitness: 11.91 Hits: 0
+Epoch 1 Max-fitness: 22.14 Avg. Fitness: 4.7904 Hits: 1
+Epoch 2 Max-fitness: 49.14 Avg. Fitness: 5.0196 Hits: 2
+Epoch 3 Max-fitness: 11.14 Avg. Fitness: 4.8564 Hits: 0
+Epoch 4 Max-fitness: 24.14 Avg. Fitness: 4.8959 Hits: 1
+Epoch 5 Max-fitness: 18.14 Avg. Fitness: 4.8959 Hits: 1
+Epoch 6 Max-fitness: 11.31 Avg. Fitness: 4.6837 Hits: 0
+Epoch 7 Max-fitness: 12.14 Avg. Fitness: 4.8585 Hits: 0
+Epoch 8 Max-fitness: 11.14 Avg. Fitness: 4.5875 Hits: 0
+Epoch 9 Max-fitness: 22.14 Avg. Fitness: 5.2608 Hits: 1
+Epoch 10 Max-fitness: 40.14 Avg. Fitness: 5.4039 Hits: 3
+Epoch 11 Max-fitness: 21.14 Avg. Fitness: 4.9221 Hits: 1
+Epoch 12 Max-fitness: 12.14 Avg. Fitness: 4.6429 Hits: 0
+Epoch 13 Max-fitness: 10.98 Avg. Fitness: 4.5152 Hits: 0
+Epoch 14 Max-fitness: 26.14 Avg. Fitness: 5.2908 Hits: 2
+Epoch 15 Max-fitness: 46.14 Avg. Fitness: 5.4029 Hits: 1
+Epoch 16 Max-fitness: 13.14 Avg. Fitness: 5.0326 Hits: 1
+Epoch 17 Max-fitness: 41.14 Avg. Fitness: 5.186 Hits: 1
+Epoch 18 Max-fitness: 33.14 Avg. Fitness: 5.6618 Hits: 2
+Epoch 19 Max-fitness: 30.14 Avg. Fitness: 4.7609 Hits: 2
+Epoch 20 Max-fitness: 47.14 Avg. Fitness: 4.9071 Hits: 1
+Epoch 21 Max-fitness: 24.14 Avg. Fitness: 4.7077 Hits: 1
+Epoch 22 Max-fitness: 11.91 Avg. Fitness: 4.4813 Hits: 0
+Epoch 23 Max-fitness: 20.14 Avg. Fitness: 4.8813 Hits: 1
+Epoch 24 Max-fitness: 26.14 Avg. Fitness: 5.3596 Hits: 1
+Epoch 25 Max-fitness: 12.14 Avg. Fitness: 5.5436 Hits: 0
+Epoch 26 Max-fitness: 58.14 Avg. Fitness: 5.3532 Hits: 2
+Epoch 27 Max-fitness: 12.73 Avg. Fitness: 4.5962 Hits: 0
+Epoch 28 Max-fitness: 12.14 Avg. Fitness: 4.8932 Hits: 0
+Epoch 29 Max-fitness: 19.14 Avg. Fitness: 4.8769 Hits: 3
+Epoch 30 Max-fitness: 22.14 Avg. Fitness: 4.587 Hits: 1
+Epoch 31 Max-fitness: 10.98 Avg. Fitness: 4.5969 Hits: 0
+Epoch 32 Max-fitness: 44.14 Avg. Fitness: 5.6764 Hits: 4
+Epoch 33 Max-fitness: 23.14 Avg. Fitness: 4.6213 Hits: 1
+Epoch 34 Max-fitness: 51.14 Avg. Fitness: 5.3041 Hits: 1
+Epoch 35 Max-fitness: 10.14 Avg. Fitness: 4.8934 Hits: 0
+Epoch 36 Max-fitness: 26.14 Avg. Fitness: 5.154 Hits: 2
+Epoch 37 Max-fitness: 11.14 Avg. Fitness: 4.5898 Hits: 0
+Epoch 38 Max-fitness: 18.14 Avg. Fitness: 5.1533 Hits: 1
+Epoch 39 Max-fitness: 26.14 Avg. Fitness: 5.3467 Hits: 2
+Epoch 40 Max-fitness: 12.73 Avg. Fitness: 4.5148 Hits: 0
+Epoch 41 Max-fitness: 10.98 Avg. Fitness: 4.3917 Hits: 0
+Epoch 42 Max-fitness: 15.14 Avg. Fitness: 4.6792 Hits: 1
+Epoch 43 Max-fitness: 11.91 Avg. Fitness: 4.9451 Hits: 0
+Epoch 44 Max-fitness: 15.14 Avg. Fitness: 4.7345 Hits: 1
+Epoch 45 Max-fitness: 12.73 Avg. Fitness: 4.7668 Hits: 0
+Epoch 46 Max-fitness: 11.91 Avg. Fitness: 4.1844 Hits: 0
+Epoch 47 Max-fitness: 24.14 Avg. Fitness: 4.7044 Hits: 1
+Epoch 48 Max-fitness: 11.14 Avg. Fitness: 4.6213 Hits: 0
+Epoch 49 Max-fitness: 24.14 Avg. Fitness: 4.7847 Hits: 2
+Epoch 50 Max-fitness: 12.73 Avg. Fitness: 4.4865 Hits: 0
+Epoch 51 Max-fitness: 35.14 Avg. Fitness: 5.324 Hits: 2
+Epoch 52 Max-fitness: 56.14 Avg. Fitness: 5.548 Hits: 2
+Epoch 53 Max-fitness: 33.14 Avg. Fitness: 4.7874 Hits: 2
+Epoch 54 Max-fitness: 41.14 Avg. Fitness: 5.6089 Hits: 3
+Epoch 55 Max-fitness: 31.14 Avg. Fitness: 5.5004 Hits: 2
+Epoch 56 Max-fitness: 11.91 Avg. Fitness: 4.1415 Hits: 0
+Epoch 57 Max-fitness: 27.14 Avg. Fitness: 4.7268 Hits: 1
+Epoch 58 Max-fitness: 24.14 Avg. Fitness: 4.6687 Hits: 1
+Epoch 59 Max-fitness: 26.14 Avg. Fitness: 5.2539 Hits: 2
+Epoch 60 Max-fitness: 24.14 Avg. Fitness: 5.0364 Hits: 2
+Epoch 61 Max-fitness: 11.31 Avg. Fitness: 4.9558 Hits: 0
+Epoch 62 Max-fitness: 10.54 Avg. Fitness: 4.3531 Hits: 0
+Epoch 63 Max-fitness: 26.14 Avg. Fitness: 4.9455 Hits: 1
+Epoch 64 Max-fitness: 12.14 Avg. Fitness: 4.3785 Hits: 0
+Epoch 65 Max-fitness: 33.14 Avg. Fitness: 4.6299 Hits: 1
+Epoch 66 Max-fitness: 18.14 Avg. Fitness: 4.8441 Hits: 1
+Epoch 67 Max-fitness: 21.14 Avg. Fitness: 4.9618 Hits: 1
+Epoch 68 Max-fitness: 44.14 Avg. Fitness: 5.5895 Hits: 2
+Epoch 69 Max-fitness: 12.14 Avg. Fitness: 4.9607 Hits: 0
+Epoch 70 Max-fitness: 11.91 Avg. Fitness: 4.5098 Hits: 0
+Epoch 71 Max-fitness: 20.14 Avg. Fitness: 5.165 Hits: 1
+Epoch 72 Max-fitness: 39.14 Avg. Fitness: 5.0698 Hits: 2
+Epoch 73 Max-fitness: 19.14 Avg. Fitness: 4.9644 Hits: 1
+Epoch 74 Max-fitness: 41.14 Avg. Fitness: 5.4405 Hits: 3
+Epoch 75 Max-fitness: 29.14 Avg. Fitness: 5.1179 Hits: 1
+Epoch 76 Max-fitness: 28.14 Avg. Fitness: 4.7257 Hits: 2
+Epoch 77 Max-fitness: 11.14 Avg. Fitness: 4.6876 Hits: 0
+Epoch 78 Max-fitness: 11.31 Avg. Fitness: 4.578 Hits: 0
+Epoch 79 Max-fitness: 11.91 Avg. Fitness: 4.6001 Hits: 0
+Epoch 80 Max-fitness: 17.14 Avg. Fitness: 4.7451 Hits: 2
+Epoch 81 Max-fitness: 44.14 Avg. Fitness: 5.1055 Hits: 1
+Epoch 82 Max-fitness: 37.14 Avg. Fitness: 5.2496 Hits: 1
+Epoch 83 Max-fitness: 25.14 Avg. Fitness: 4.5507 Hits: 1
+Epoch 84 Max-fitness: 11.91 Avg. Fitness: 4.6206 Hits: 0
+Epoch 85 Max-fitness: 35.14 Avg. Fitness: 4.6259 Hits: 1
+Epoch 86 Max-fitness: 33.14 Avg. Fitness: 5.0001 Hits: 1
+Epoch 87 Max-fitness: 16.14 Avg. Fitness: 4.8449 Hits: 1
+Epoch 88 Max-fitness: 47.14 Avg. Fitness: 5.3009 Hits: 1
+Epoch 89 Max-fitness: 18.14 Avg. Fitness: 4.7584 Hits: 1
+Epoch 90 Max-fitness: 33.14 Avg. Fitness: 5.2908 Hits: 2
+Epoch 91 Max-fitness: 36.14 Avg. Fitness: 5.114 Hits: 2
+Epoch 92 Max-fitness: 17.14 Avg. Fitness: 4.9015 Hits: 1
+Epoch 93 Max-fitness: 9.04 Avg. Fitness: 4.3055 Hits: 0
+Epoch 94 Max-fitness: 11.31 Avg. Fitness: 4.7576 Hits: 0
+Epoch 95 Max-fitness: 45.14 Avg. Fitness: 5.0791 Hits: 2
+Epoch 96 Max-fitness: 12.14 Avg. Fitness: 4.9496 Hits: 0
+Epoch 97 Max-fitness: 32.14 Avg. Fitness: 4.9804 Hits: 1
+Epoch 98 Max-fitness: 44.14 Avg. Fitness: 4.7279 Hits: 1
+Epoch 99 Max-fitness: 32.14 Avg. Fitness: 4.7732 Hits: 3
+Epoch 100 Max-fitness: 10.98 Avg. Fitness: 4.596 Hits: 0
 
-Epoch 1 Max-fitness: 38.14 Hits: 2
+Epoch 1 Max-fitness: 53.14 Avg. Fitness: 5.9288 Hits: 2
+Epoch 2 Max-fitness: 12.73 Avg. Fitness: 5.7916 Hits: 0
+Epoch 3 Max-fitness: 58.14 Avg. Fitness: 5.5198 Hits: 1
+Epoch 4 Max-fitness: 40.14 Avg. Fitness: 6.1166 Hits: 2
+Epoch 5 Max-fitness: 59.14 Avg. Fitness: 6.6536 Hits: 5
+Epoch 6 Max-fitness: 48.14 Avg. Fitness: 6.9638 Hits: 3
+Epoch 7 Max-fitness: 37.14 Avg. Fitness: 5.8738 Hits: 2
+Epoch 8 Max-fitness: 45.14 Avg. Fitness: 6.25 Hits: 2
+Epoch 9 Max-fitness: 55.14 Avg. Fitness: 6.305 Hits: 3
+Epoch 1 Max-fitness: 22.14 Avg. Fitness: 5.5483 Hits: 2
+Epoch 2 Max-fitness: 44.14 Avg. Fitness: 5.7794 Hits: 2
+Epoch 3 Max-fitness: 47.14 Avg. Fitness: 6.2831 Hits: 5
+Epoch 4 Max-fitness: 44.14 Avg. Fitness: 5.9058 Hits: 2
+Epoch 5 Max-fitness: 35.14 Avg. Fitness: 5.5346 Hits: 1
+Epoch 6 Max-fitness: 57.14 Avg. Fitness: 6.416 Hits: 3
+Epoch 7 Max-fitness: 39.14 Avg. Fitness: 5.9953 Hits: 2
+Epoch 8 Max-fitness: 39.14 Avg. Fitness: 6.0024 Hits: 3
+Epoch 9 Max-fitness: 49.14 Avg. Fitness: 6.1035 Hits: 1
+Epoch 10 Max-fitness: 27.14 Avg. Fitness: 5.5926 Hits: 1
+Epoch 11 Max-fitness: 65.14 Avg. Fitness: 6.6575 Hits: 2
+Epoch 12 Max-fitness: 33.14 Avg. Fitness: 5.8897 Hits: 1
+Epoch 13 Max-fitness: 14.14 Avg. Fitness: 5.4677 Hits: 1
+Epoch 14 Max-fitness: 12.73 Avg. Fitness: 5.5723 Hits: 0
+Epoch 15 Max-fitness: 52.14 Avg. Fitness: 6.4935 Hits: 3
+Epoch 16 Max-fitness: 12.73 Avg. Fitness: 5.176 Hits: 0
+Epoch 17 Max-fitness: 29.14 Avg. Fitness: 6.1114 Hits: 1
+Epoch 18 Max-fitness: 52.14 Avg. Fitness: 5.8076 Hits: 1
+Epoch 19 Max-fitness: 20.14 Avg. Fitness: 5.6385 Hits: 3
+Epoch 20 Max-fitness: 67.14 Avg. Fitness: 5.8265 Hits: 2
+Epoch 21 Max-fitness: 50.14 Avg. Fitness: 6.903 Hits: 6
+Epoch 22 Max-fitness: 39.14 Avg. Fitness: 5.5681 Hits: 2
+Epoch 23 Max-fitness: 67.14 Avg. Fitness: 6.2838 Hits: 2
+Epoch 24 Max-fitness: 52.14 Avg. Fitness: 6.4432 Hits: 3
+Epoch 25 Max-fitness: 63.14 Avg. Fitness: 6.03 Hits: 2
+Epoch 26 Max-fitness: 62.14 Avg. Fitness: 6.039 Hits: 1
+Epoch 27 Max-fitness: 31.14 Avg. Fitness: 5.5234 Hits: 2
+Epoch 28 Max-fitness: 58.14 Avg. Fitness: 6.6863 Hits: 4
+Epoch 29 Max-fitness: 54.14 Avg. Fitness: 6.2758 Hits: 2
+Epoch 30 Max-fitness: 43.14 Avg. Fitness: 5.889 Hits: 1
+Epoch 31 Max-fitness: 11.91 Avg. Fitness: 5.0148 Hits: 0
+Epoch 32 Max-fitness: 29.14 Avg. Fitness: 5.8635 Hits: 4
+Epoch 33 Max-fitness: 26.14 Avg. Fitness: 5.3846 Hits: 2
+Epoch 34 Max-fitness: 53.14 Avg. Fitness: 5.9071 Hits: 2
+Epoch 35 Max-fitness: 31.14 Avg. Fitness: 5.6381 Hits: 1
+Epoch 36 Max-fitness: 53.14 Avg. Fitness: 5.9985 Hits: 3
+Epoch 37 Max-fitness: 18.14 Avg. Fitness: 4.9242 Hits: 2
+Epoch 38 Max-fitness: 59.14 Avg. Fitness: 5.5659 Hits: 2
+Epoch 39 Max-fitness: 22.14 Avg. Fitness: 5.3725 Hits: 1
+Epoch 40 Max-fitness: 72.14 Avg. Fitness: 7.4608 Hits: 3
+Epoch 41 Max-fitness: 27.14 Avg. Fitness: 5.7132 Hits: 2
+Epoch 42 Max-fitness: 30.14 Avg. Fitness: 5.5637 Hits: 3
+Epoch 43 Max-fitness: 58.14 Avg. Fitness: 7.654 Hits: 8
+Epoch 44 Max-fitness: 54.14 Avg. Fitness: 6.5002 Hits: 4
+Epoch 45 Max-fitness: 28.14 Avg. Fitness: 5.8852 Hits: 2
+Epoch 46 Max-fitness: 37.14 Avg. Fitness: 6.0334 Hits: 3
+Epoch 47 Max-fitness: 37.14 Avg. Fitness: 6.1328 Hits: 1
+Epoch 48 Max-fitness: 73.14 Avg. Fitness: 6.4631 Hits: 2
+Epoch 49 Max-fitness: 27.14 Avg. Fitness: 5.5829 Hits: 2
+Epoch 50 Max-fitness: 13.14 Avg. Fitness: 5.6685 Hits: 1
 
-Epoch 1 Max-fitness: 33.14 Hits: 2
+Epoch 1 Max-fitness: 33.14 Avg. Fitness: 6.5785 Hits: 4
+Epoch 2 Max-fitness: 47.14 Avg. Fitness: 7.3689 Hits: 6
+Epoch 3 Max-fitness: 12.73 Avg. Fitness: 5.7186 Hits: 0
+Epoch 4 Max-fitness: 12.73 Avg. Fitness: 5.3574 Hits: 0
+Epoch 5 Max-fitness: 42.14 Avg. Fitness: 5.7585 Hits: 3
+Epoch 6 Max-fitness: 50.14 Avg. Fitness: 6.3191 Hits: 4
+Epoch 7 Max-fitness: 80.14 Avg. Fitness: 6.3738 Hits: 3
+Epoch 8 Max-fitness: 27.14 Avg. Fitness: 6.0846 Hits: 2
+Epoch 9 Max-fitness: 35.14 Avg. Fitness: 6.3545 Hits: 3
+Epoch 10 Max-fitness: 42.14 Avg. Fitness: 6.8485 Hits: 4
+Epoch 11 Max-fitness: 41.14 Avg. Fitness: 7.4246 Hits: 7
+Epoch 12 Max-fitness: 23.14 Avg. Fitness: 6.4923 Hits: 3
+Epoch 1 Max-fitness: 40.14 Avg. Fitness: 6.0656 Hits: 2
+Epoch 2 Max-fitness: 54.14 Avg. Fitness: 6.0052 Hits: 3
+Epoch 3 Max-fitness: 63.14 Avg. Fitness: 6.2294 Hits: 3
+Epoch 4 Max-fitness: 47.14 Avg. Fitness: 6.3601 Hits: 5
+Epoch 5 Max-fitness: 32.14 Avg. Fitness: 6.2098 Hits: 5
+Epoch 6 Max-fitness: 47.14 Avg. Fitness: 6.3207 Hits: 3
+Epoch 7 Max-fitness: 31.14 Avg. Fitness: 6.0023 Hits: 2
+Epoch 8 Max-fitness: 39.14 Avg. Fitness: 6.4935 Hits: 4
+Epoch 9 Max-fitness: 42.14 Avg. Fitness: 6.3338 Hits: 4
+Epoch 10 Max-fitness: 46.14 Avg. Fitness: 6.4541 Hits: 4
+Epoch 11 Max-fitness: 31.14 Avg. Fitness: 5.8499 Hits: 2
+Epoch 12 Max-fitness: 47.14 Avg. Fitness: 5.8203 Hits: 2
+Epoch 13 Max-fitness: 22.14 Avg. Fitness: 5.5799 Hits: 1
+Epoch 14 Max-fitness: 62.14 Avg. Fitness: 6.7377 Hits: 3
+Epoch 15 Max-fitness: 33.14 Avg. Fitness: 5.7941 Hits: 1
+Epoch 16 Max-fitness: 17.14 Avg. Fitness: 5.5534 Hits: 1
+Epoch 17 Max-fitness: 42.14 Avg. Fitness: 6.482 Hits: 3
+Epoch 18 Max-fitness: 46.14 Avg. Fitness: 6.7795 Hits: 4
+Epoch 19 Max-fitness: 14.14 Avg. Fitness: 5.5042 Hits: 2
+Epoch 20 Max-fitness: 32.14 Avg. Fitness: 5.8314 Hits: 4
+Epoch 21 Max-fitness: 58.14 Avg. Fitness: 6.6856 Hits: 6
+Epoch 22 Max-fitness: 61.14 Avg. Fitness: 7.2285 Hits: 5
+Epoch 23 Max-fitness: 51.14 Avg. Fitness: 8.283 Hits: 8
+Epoch 24 Max-fitness: 64.14 Avg. Fitness: 7.0231 Hits: 7
+Epoch 25 Max-fitness: 22.14 Avg. Fitness: 6.3623 Hits: 2
+Epoch 26 Max-fitness: 39.14 Avg. Fitness: 6.4851 Hits: 6
+Epoch 27 Max-fitness: 59.14 Avg. Fitness: 7.1093 Hits: 6
+Epoch 28 Max-fitness: 27.14 Avg. Fitness: 5.641 Hits: 2
+Epoch 29 Max-fitness: 38.14 Avg. Fitness: 6.3287 Hits: 4
+Epoch 30 Max-fitness: 34.14 Avg. Fitness: 5.602 Hits: 2
+Epoch 31 Max-fitness: 50.14 Avg. Fitness: 6.5608 Hits: 4
+Epoch 32 Max-fitness: 54.14 Avg. Fitness: 6.9538 Hits: 7
+Epoch 33 Max-fitness: 74.14 Avg. Fitness: 6.2732 Hits: 3
+Epoch 34 Max-fitness: 48.14 Avg. Fitness: 6.36 Hits: 6
+Epoch 35 Max-fitness: 71.14 Avg. Fitness: 7.1717 Hits: 3
+Epoch 36 Max-fitness: 45.14 Avg. Fitness: 5.7831 Hits: 3
+Epoch 37 Max-fitness: 61.14 Avg. Fitness: 7.02 Hits: 4
+Epoch 38 Max-fitness: 44.14 Avg. Fitness: 6.8594 Hits: 5
+Epoch 39 Max-fitness: 29.14 Avg. Fitness: 5.4711 Hits: 3
+Epoch 40 Max-fitness: 82.14 Avg. Fitness: 6.8944 Hits: 2
+Epoch 41 Max-fitness: 41.14 Avg. Fitness: 7.0836 Hits: 5
+Epoch 42 Max-fitness: 77.14 Avg. Fitness: 8.3661 Hits: 7
+Epoch 43 Max-fitness: 20.14 Avg. Fitness: 5.3214 Hits: 2
+Epoch 44 Max-fitness: 35.14 Avg. Fitness: 6.6215 Hits: 4
+Epoch 45 Max-fitness: 49.14 Avg. Fitness: 7.586 Hits: 8
+Epoch 46 Max-fitness: 40.14 Avg. Fitness: 6.5403 Hits: 5
+Epoch 47 Max-fitness: 71.14 Avg. Fitness: 7.1624 Hits: 8
+Epoch 48 Max-fitness: 40.14 Avg. Fitness: 6.6196 Hits: 5
+Epoch 49 Max-fitness: 32.14 Avg. Fitness: 6.3449 Hits: 3
+Epoch 50 Max-fitness: 45.14 Avg. Fitness: 6.7378 Hits: 4
+Epoch 51 Max-fitness: 54.14 Avg. Fitness: 6.4104 Hits: 5
+Epoch 52 Max-fitness: 74.14 Avg. Fitness: 7.4539 Hits: 5
+Epoch 53 Max-fitness: 37.14 Avg. Fitness: 5.9975 Hits: 2
+Epoch 54 Max-fitness: 44.14 Avg. Fitness: 7.1271 Hits: 4
+Epoch 55 Max-fitness: 51.14 Avg. Fitness: 6.8348 Hits: 5
+Epoch 56 Max-fitness: 36.14 Avg. Fitness: 5.7594 Hits: 3
+Epoch 57 Max-fitness: 55.14 Avg. Fitness: 6.0283 Hits: 2
+Epoch 58 Max-fitness: 38.14 Avg. Fitness: 5.4528 Hits: 2
+Epoch 59 Max-fitness: 21.14 Avg. Fitness: 5.7583 Hits: 1
+Epoch 60 Max-fitness: 73.14 Avg. Fitness: 8.1963 Hits: 9
+Epoch 61 Max-fitness: 37.14 Avg. Fitness: 6.3937 Hits: 4
+Epoch 62 Max-fitness: 58.14 Avg. Fitness: 7.2049 Hits: 3
+Epoch 63 Max-fitness: 27.14 Avg. Fitness: 5.6611 Hits: 2
+Epoch 64 Max-fitness: 61.14 Avg. Fitness: 6.4409 Hits: 3
+Epoch 65 Max-fitness: 64.14 Avg. Fitness: 6.9639 Hits: 5
+Epoch 66 Max-fitness: 57.14 Avg. Fitness: 6.4219 Hits: 4
+Epoch 67 Max-fitness: 20.14 Avg. Fitness: 5.7178 Hits: 1
+Epoch 68 Max-fitness: 11.91 Avg. Fitness: 5.5292 Hits: 0
+Epoch 69 Max-fitness: 28.14 Avg. Fitness: 6.1138 Hits: 4
+Epoch 70 Max-fitness: 61.14 Avg. Fitness: 6.2314 Hits: 3
+Epoch 71 Max-fitness: 44.14 Avg. Fitness: 6.9001 Hits: 6
+Epoch 1 Max-fitness: 7.43 Avg. Fitness: 6.485 Hits: 0
 
-Epoch 1 Max-fitness: 48.14 Hits: 1
+Epoch 1 Max-fitness: 6.08 Avg. Fitness: 4.965 Hits: 0
 
-Epoch 1 Max-fitness: 22.14 Hits: 2
+Epoch 1 Max-fitness: 4.92 Avg. Fitness: 3.83 Hits: 0
 
-Epoch 1 Max-fitness: 11.91 Hits: 0
+Epoch 1 Max-fitness: 3.47 Avg. Fitness: 2.77 Hits: 0
 
-Epoch 1 Max-fitness: 15.14 Hits: 1
+Epoch 1 Max-fitness: 2.07 Avg. Fitness: 1.88 Hits: 0
 
+Epoch 1 Max-fitness: 3.47 Avg. Fitness: 3.47 Hits: 0
+
+Epoch 1 Max-fitness: 1.97 Avg. Fitness: 1.605 Hits: 0
+
+Epoch 1 Max-fitness: 2.83 Avg. Fitness: 2.715 Hits: 0
+
+Epoch 1 Max-fitness: 2.95 Avg. Fitness: 2.51 Hits: 0
+
+Epoch 1 Max-fitness: 5.66 Avg. Fitness: 3.865 Hits: 0
+
+Epoch 1 Max-fitness: 3.47 Avg. Fitness: 2.58 Hits: 0
+
+Epoch 1 Max-fitness: 2.83 Avg. Fitness: 2.715 Hits: 0
+
+Epoch 1 Max-fitness: 5.07 Avg. Fitness: 3.155 Hits: 0
+
+Epoch 1 Max-fitness: 6.07 Avg. Fitness: 2.50625 Hits: 2
+Epoch 2 Max-fitness: 17.07 Avg. Fitness: 2.8605 Hits: 2
+Epoch 3 Max-fitness: 5.66 Avg. Fitness: 2.374 Hits: 0
+Epoch 4 Max-fitness: 12.07 Avg. Fitness: 2.38 Hits: 2
+Epoch 5 Max-fitness: 8.07 Avg. Fitness: 2.6695 Hits: 2
+Epoch 6 Max-fitness: 15.07 Avg. Fitness: 2.83225 Hits: 2
+Epoch 7 Max-fitness: 15.07 Avg. Fitness: 2.8515 Hits: 4
+Epoch 8 Max-fitness: 16.07 Avg. Fitness: 2.73675 Hits: 3
+Epoch 9 Max-fitness: 17.07 Avg. Fitness: 2.94975 Hits: 5
+Epoch 10 Max-fitness: 22.07 Avg. Fitness: 3.465625 Hits: 6
+Epoch 11 Max-fitness: 5.66 Avg. Fitness: 2.730125 Hits: 0
+Epoch 12 Max-fitness: 12.07 Avg. Fitness: 2.441 Hits: 1
+Epoch 13 Max-fitness: 21.07 Avg. Fitness: 3.011125 Hits: 5
+Epoch 14 Max-fitness: 12.07 Avg. Fitness: 2.83975 Hits: 3
+Epoch 15 Max-fitness: 17.07 Avg. Fitness: 2.62925 Hits: 2
+Epoch 16 Max-fitness: 18.07 Avg. Fitness: 2.922125 Hits: 5
+Epoch 17 Max-fitness: 4.83 Avg. Fitness: 2.513875 Hits: 0
+Epoch 18 Max-fitness: 9.07 Avg. Fitness: 2.596125 Hits: 1
+Epoch 19 Max-fitness: 4.83 Avg. Fitness: 2.371625 Hits: 0
+Epoch 20 Max-fitness: 15.07 Avg. Fitness: 2.6165 Hits: 1
+Epoch 21 Max-fitness: 17.07 Avg. Fitness: 2.852625 Hits: 2
+Epoch 22 Max-fitness: 7.07 Avg. Fitness: 2.369 Hits: 1
+Epoch 23 Max-fitness: 18.07 Avg. Fitness: 3.3105 Hits: 5
+Epoch 24 Max-fitness: 18.07 Avg. Fitness: 2.969625 Hits: 4
+Epoch 25 Max-fitness: 10.07 Avg. Fitness: 2.62525 Hits: 1
+Epoch 26 Max-fitness: 11.07 Avg. Fitness: 2.792125 Hits: 1
+Epoch 27 Max-fitness: 19.07 Avg. Fitness: 2.776875 Hits: 3
+Epoch 28 Max-fitness: 7.07 Avg. Fitness: 2.1105 Hits: 1
+Epoch 29 Max-fitness: 15.07 Avg. Fitness: 2.50625 Hits: 2
+Epoch 30 Max-fitness: 17.07 Avg. Fitness: 2.655375 Hits: 2
+Epoch 31 Max-fitness: 11.07 Avg. Fitness: 2.5955 Hits: 2
+Epoch 32 Max-fitness: 18.07 Avg. Fitness: 2.843 Hits: 2
+Epoch 33 Max-fitness: 14.07 Avg. Fitness: 2.398 Hits: 1
+Epoch 34 Max-fitness: 19.07 Avg. Fitness: 3.186125 Hits: 5
+Epoch 35 Max-fitness: 16.07 Avg. Fitness: 2.728625 Hits: 4
+Epoch 36 Max-fitness: 16.07 Avg. Fitness: 2.961125 Hits: 4
+Epoch 37 Max-fitness: 18.07 Avg. Fitness: 2.72 Hits: 4
+Epoch 38 Max-fitness: 12.07 Avg. Fitness: 2.73225 Hits: 4
+Epoch 39 Max-fitness: 17.07 Avg. Fitness: 2.64725 Hits: 2
+Epoch 40 Max-fitness: 14.07 Avg. Fitness: 2.657875 Hits: 2
+Epoch 41 Max-fitness: 11.07 Avg. Fitness: 2.43125 Hits: 2
+Epoch 42 Max-fitness: 15.07 Avg. Fitness: 2.4735 Hits: 2
+Epoch 43 Max-fitness: 11.07 Avg. Fitness: 2.844125 Hits: 4
+Epoch 44 Max-fitness: 10.07 Avg. Fitness: 2.45675 Hits: 1
+Epoch 45 Max-fitness: 19.07 Avg. Fitness: 3.13 Hits: 6
+Epoch 46 Max-fitness: 12.07 Avg. Fitness: 2.493125 Hits: 3
+Epoch 47 Max-fitness: 14.07 Avg. Fitness: 2.738125 Hits: 1
+Epoch 48 Max-fitness: 18.07 Avg. Fitness: 2.930125 Hits: 4
+Epoch 49 Max-fitness: 10.07 Avg. Fitness: 2.5405 Hits: 2
+Epoch 50 Max-fitness: 5.66 Avg. Fitness: 2.400625 Hits: 0
+
+Epoch 1 Max-fitness: 12.73 Avg. Fitness: 4.33125 Hits: 0
+Epoch 2 Max-fitness: 12.14 Avg. Fitness: 4.635375 Hits: 0
+Epoch 3 Max-fitness: 11.31 Avg. Fitness: 4.2755 Hits: 0
+Epoch 4 Max-fitness: 19.14 Avg. Fitness: 4.5685 Hits: 1
+Epoch 5 Max-fitness: 11.14 Avg. Fitness: 4.065625 Hits: 0
+Epoch 6 Max-fitness: 11.91 Avg. Fitness: 4.40525 Hits: 0
+Epoch 1 Max-fitness: 52.14 Avg. Fitness: 5.86125 Hits: 2
+Epoch 2 Max-fitness: 32.14 Avg. Fitness: 5.6575 Hits: 3
+Epoch 3 Max-fitness: 11.91 Avg. Fitness: 5.3035 Hits: 0
+Epoch 4 Max-fitness: 11.91 Avg. Fitness: 4.443625 Hits: 0
+Epoch 5 Max-fitness: 38.14 Avg. Fitness: 5.094 Hits: 1
+Epoch 6 Max-fitness: 29.14 Avg. Fitness: 5.167375 Hits: 1
+Epoch 7 Max-fitness: 28.14 Avg. Fitness: 5.446875 Hits: 1
+Epoch 8 Max-fitness: 27.14 Avg. Fitness: 5.295875 Hits: 2
+Epoch 9 Max-fitness: 62.14 Avg. Fitness: 6.141625 Hits: 3
+Epoch 10 Max-fitness: 34.14 Avg. Fitness: 6.063375 Hits: 3
+Epoch 11 Max-fitness: 19.14 Avg. Fitness: 5.445625 Hits: 1
+Epoch 12 Max-fitness: 36.14 Avg. Fitness: 5.49875 Hits: 1
+Epoch 13 Max-fitness: 53.14 Avg. Fitness: 5.863625 Hits: 1
+Epoch 14 Max-fitness: 44.14 Avg. Fitness: 6.121375 Hits: 2
+Epoch 15 Max-fitness: 18.14 Avg. Fitness: 5.155375 Hits: 1
+Epoch 16 Max-fitness: 10.54 Avg. Fitness: 4.69375 Hits: 0
+Epoch 17 Max-fitness: 16.14 Avg. Fitness: 5.13275 Hits: 1
+Epoch 18 Max-fitness: 34.14 Avg. Fitness: 5.736375 Hits: 2
+Epoch 19 Max-fitness: 11.14 Avg. Fitness: 4.837625 Hits: 0
+Epoch 20 Max-fitness: 53.14 Avg. Fitness: 6.701125 Hits: 4
+Epoch 21 Max-fitness: 21.14 Avg. Fitness: 5.099 Hits: 3
+Epoch 22 Max-fitness: 25.14 Avg. Fitness: 5.103375 Hits: 1
+Epoch 23 Max-fitness: 11.91 Avg. Fitness: 4.70125 Hits: 0
+Epoch 24 Max-fitness: 22.14 Avg. Fitness: 5.8335 Hits: 2
+Epoch 25 Max-fitness: 13.14 Avg. Fitness: 4.588875 Hits: 1
+Epoch 26 Max-fitness: 33.14 Avg. Fitness: 5.917 Hits: 1
+Epoch 27 Max-fitness: 12.73 Avg. Fitness: 5.00675 Hits: 0
+Epoch 28 Max-fitness: 35.14 Avg. Fitness: 5.56375 Hits: 1
+Epoch 29 Max-fitness: 47.14 Avg. Fitness: 6.3255 Hits: 3
+Epoch 30 Max-fitness: 39.14 Avg. Fitness: 5.701 Hits: 2
+Epoch 31 Max-fitness: 24.14 Avg. Fitness: 5.574625 Hits: 2
+Epoch 32 Max-fitness: 24.14 Avg. Fitness: 5.4005 Hits: 2
+Epoch 33 Max-fitness: 24.14 Avg. Fitness: 5.136375 Hits: 1
+Epoch 34 Max-fitness: 32.14 Avg. Fitness: 5.476625 Hits: 1
+Epoch 35 Max-fitness: 50.14 Avg. Fitness: 5.879375 Hits: 4
+Epoch 36 Max-fitness: 10.02 Avg. Fitness: 5.07125 Hits: 0
+Epoch 37 Max-fitness: 10.98 Avg. Fitness: 5.166125 Hits: 0
+Epoch 38 Max-fitness: 47.14 Avg. Fitness: 5.518125 Hits: 1
+Epoch 39 Max-fitness: 23.14 Avg. Fitness: 5.06075 Hits: 2
+Epoch 40 Max-fitness: 13.14 Avg. Fitness: 5.310375 Hits: 1
+Epoch 41 Max-fitness: 70.14 Avg. Fitness: 5.7735 Hits: 2
+Epoch 42 Max-fitness: 69.14 Avg. Fitness: 5.97775 Hits: 2
+Epoch 43 Max-fitness: 22.14 Avg. Fitness: 4.969125 Hits: 2
+Epoch 44 Max-fitness: 11.31 Avg. Fitness: 5.197625 Hits: 0
+Epoch 45 Max-fitness: 41.14 Avg. Fitness: 5.60575 Hits: 2
+Epoch 46 Max-fitness: 54.14 Avg. Fitness: 5.17875 Hits: 1
+Epoch 47 Max-fitness: 44.14 Avg. Fitness: 5.3955 Hits: 1
+Epoch 48 Max-fitness: 14.14 Avg. Fitness: 4.888625 Hits: 1
+Epoch 49 Max-fitness: 33.14 Avg. Fitness: 5.88 Hits: 4
+Epoch 50 Max-fitness: 24.14 Avg. Fitness: 4.89425 Hits: 1
+
+Epoch 1 Max-fitness: 14.07 Avg. Fitness: 2.589625 Hits: 4
+Epoch 2 Max-fitness: 8.07 Avg. Fitness: 2.618 Hits: 3
+Epoch 3 Max-fitness: 15.07 Avg. Fitness: 2.826125 Hits: 2
+Epoch 4 Max-fitness: 16.07 Avg. Fitness: 2.485 Hits: 1
+Epoch 5 Max-fitness: 5.07 Avg. Fitness: 2.35 Hits: 0
+Epoch 6 Max-fitness: 10.07 Avg. Fitness: 2.770625 Hits: 3
+Epoch 7 Max-fitness: 18.07 Avg. Fitness: 2.491625 Hits: 2
+Epoch 8 Max-fitness: 19.07 Avg. Fitness: 2.931 Hits: 1
+Epoch 9 Max-fitness: 16.07 Avg. Fitness: 2.89925 Hits: 2
+Epoch 10 Max-fitness: 7.07 Avg. Fitness: 2.437875 Hits: 2
+Epoch 11 Max-fitness: 17.07 Avg. Fitness: 2.7225 Hits: 4
+Epoch 12 Max-fitness: 16.07 Avg. Fitness: 2.399875 Hits: 1
+Epoch 13 Max-fitness: 5.66 Avg. Fitness: 2.784875 Hits: 0
+Epoch 14 Max-fitness: 14.07 Avg. Fitness: 2.787375 Hits: 3
+Epoch 15 Max-fitness: 11.07 Avg. Fitness: 2.705625 Hits: 2
+Epoch 16 Max-fitness: 15.07 Avg. Fitness: 2.437375 Hits: 1
+Epoch 17 Max-fitness: 18.07 Avg. Fitness: 2.755875 Hits: 3
+Epoch 18 Max-fitness: 6.07 Avg. Fitness: 2.665125 Hits: 1
+Epoch 19 Max-fitness: 13.07 Avg. Fitness: 2.618875 Hits: 2
+Epoch 20 Max-fitness: 13.07 Avg. Fitness: 2.719625 Hits: 2
+Epoch 21 Max-fitness: 11.07 Avg. Fitness: 2.7025 Hits: 1
+Epoch 22 Max-fitness: 14.07 Avg. Fitness: 2.4525 Hits: 1
+Epoch 23 Max-fitness: 17.07 Avg. Fitness: 2.8425 Hits: 3
+Epoch 24 Max-fitness: 12.07 Avg. Fitness: 2.476125 Hits: 2
+Epoch 25 Max-fitness: 14.07 Avg. Fitness: 2.755875 Hits: 4
+Epoch 26 Max-fitness: 16.07 Avg. Fitness: 2.9035 Hits: 1
+Epoch 27 Max-fitness: 13.07 Avg. Fitness: 2.7285 Hits: 3
+Epoch 28 Max-fitness: 17.07 Avg. Fitness: 2.88825 Hits: 4
+Epoch 29 Max-fitness: 12.07 Avg. Fitness: 2.526125 Hits: 2
+Epoch 30 Max-fitness: 17.07 Avg. Fitness: 3.0935 Hits: 2
+Epoch 31 Max-fitness: 10.07 Avg. Fitness: 2.872 Hits: 4
+Epoch 32 Max-fitness: 8.07 Avg. Fitness: 2.159875 Hits: 1
+Epoch 33 Max-fitness: 7.07 Avg. Fitness: 2.7385 Hits: 1
+Epoch 34 Max-fitness: 15.07 Avg. Fitness: 2.747875 Hits: 3
+Epoch 35 Max-fitness: 13.07 Avg. Fitness: 2.999875 Hits: 4
+Epoch 36 Max-fitness: 9.07 Avg. Fitness: 2.6845 Hits: 2
+Epoch 37 Max-fitness: 16.07 Avg. Fitness: 2.674375 Hits: 2
+Epoch 38 Max-fitness: 12.07 Avg. Fitness: 2.87475 Hits: 3
+Epoch 39 Max-fitness: 17.07 Avg. Fitness: 2.943125 Hits: 4
+Epoch 40 Max-fitness: 13.07 Avg. Fitness: 2.7705 Hits: 5
+Epoch 41 Max-fitness: 15.07 Avg. Fitness: 2.804375 Hits: 4
+Epoch 42 Max-fitness: 8.07 Avg. Fitness: 2.419875 Hits: 1
+Epoch 43 Max-fitness: 12.07 Avg. Fitness: 3.343875 Hits: 9
+Epoch 44 Max-fitness: 16.07 Avg. Fitness: 2.775625 Hits: 3
+Epoch 45 Max-fitness: 6.07 Avg. Fitness: 2.524375 Hits: 1
+Epoch 46 Max-fitness: 21.07 Avg. Fitness: 2.915375 Hits: 5
+Epoch 47 Max-fitness: 11.07 Avg. Fitness: 2.554375 Hits: 1
+Epoch 48 Max-fitness: 8.07 Avg. Fitness: 2.7295 Hits: 2
+Epoch 49 Max-fitness: 15.07 Avg. Fitness: 3.048375 Hits: 4
+Epoch 50 Max-fitness: 15.07 Avg. Fitness: 2.81925 Hits: 3
+
+Epoch 1 Max-fitness: 37.14 Avg. Fitness: 6.319 Hits: 4
+Epoch 2 Max-fitness: 37.14 Avg. Fitness: 6.5105 Hits: 4
+Epoch 3 Max-fitness: 42.14 Avg. Fitness: 6.276 Hits: 2
+Epoch 4 Max-fitness: 64.14 Avg. Fitness: 7.168 Hits: 4
+Epoch 5 Max-fitness: 53.14 Avg. Fitness: 6.01425 Hits: 2
+Epoch 6 Max-fitness: 58.14 Avg. Fitness: 6.548875 Hits: 3
+Epoch 7 Max-fitness: 12.14 Avg. Fitness: 5.246625 Hits: 0
+Epoch 8 Max-fitness: 51.14 Avg. Fitness: 5.960875 Hits: 1
+Epoch 9 Max-fitness: 54.14 Avg. Fitness: 7.363875 Hits: 7
+Epoch 10 Max-fitness: 20.14 Avg. Fitness: 5.7715 Hits: 2
+Epoch 11 Max-fitness: 51.14 Avg. Fitness: 6.029625 Hits: 4
+Epoch 12 Max-fitness: 11.91 Avg. Fitness: 5.007 Hits: 0
+Epoch 13 Max-fitness: 11.14 Avg. Fitness: 4.88525 Hits: 0
+Epoch 14 Max-fitness: 59.14 Avg. Fitness: 7.291875 Hits: 4
+Epoch 15 Max-fitness: 44.14 Avg. Fitness: 5.932625 Hits: 2
+Epoch 16 Max-fitness: 47.14 Avg. Fitness: 6.972875 Hits: 4
+Epoch 17 Max-fitness: 40.14 Avg. Fitness: 6.53725 Hits: 6
+Epoch 18 Max-fitness: 47.14 Avg. Fitness: 7.217875 Hits: 5
+Epoch 19 Max-fitness: 42.14 Avg. Fitness: 6.486875 Hits: 3
+Epoch 20 Max-fitness: 25.14 Avg. Fitness: 5.293375 Hits: 1
+Epoch 21 Max-fitness: 42.14 Avg. Fitness: 6.25375 Hits: 2
+Epoch 22 Max-fitness: 63.14 Avg. Fitness: 6.55425 Hits: 2
+Epoch 23 Max-fitness: 16.14 Avg. Fitness: 4.896875 Hits: 1
+Epoch 24 Max-fitness: 19.14 Avg. Fitness: 5.507875 Hits: 1

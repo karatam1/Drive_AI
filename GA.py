@@ -69,8 +69,8 @@ class Genetic_Alg:
 
 
             #writes to the file
-            fd.write("Epoch " + str(g+1) + " Max-fitness: " + str(max(fit_arr)) + " Hits: " +str(hits)+ "\n")
-
+            fd.write("Epoch " + str(g+1) + " Max-fitness: " + str(max(fit_arr)) + " Avg. Fitness: " + str(sum(fit_arr)/len(fit_arr)) + " Hits: " +str(hits)+ "\n")
+            #print("Epoch " + str(g+1) + " Max-fitness: " + str(max(fit_arr)) + " Avg. Fitness: " + str(sum(fit_arr)/len(fit_arr)) + " Hits: " +str(hits)+ "\n")
             opt_arr.append(max(fit_arr))
 
             #create a new empty population, this will under-go repopulation based on the fitness of the old population
@@ -148,7 +148,7 @@ class Genetic_Alg:
             ret.append("action = right")
         elif arr[-2:] == [1,1]:
             ret.append("action = wait")
-            
+
         return ret   
 
 
