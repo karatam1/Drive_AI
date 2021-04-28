@@ -102,10 +102,16 @@ class Genetic_Alg:
             self.population = new_population
 
 
-            #update the color_board data row with the new min_steps
-
         fd.write("\n")
         fd.close()
+
+
+        for x in self.population:
+            for i in range(0, len(x), 12):
+                print(self.re_code(list(x[i:i+12])))
+            print()
+
+
         print("Program Complete")
 
         #x array for plot
@@ -117,6 +123,33 @@ class Genetic_Alg:
         mp.xlabel("Epochs (generation)")
         mp.title("Optimization Plot")
         mp.show()
+
+
+
+
+    def re_code(self, arr):
+
+        ret = []
+        for i in range(0, len(arr)-2, 2):
+            if arr[i:i+2] == [0,0]:
+                ret.append('land')
+            elif arr[i:i+2] == [0,1]:
+                ret.append('road')
+            elif arr[i:i+2] == [1,0]:
+                ret.append('traffic')
+            elif arr[i:i+2] == [1,1]:
+                ret.append('block')
+        
+        if arr[-2:] == [0,0]:
+            ret.append("action = up")
+        elif arr[-2:] == [0,1]:
+            ret.append("action = left")
+        elif arr[-2:] == [1,0]:
+            ret.append("action = right")
+        elif arr[-2:] == [1,1]:
+            ret.append("action = wait")
+            
+        return ret   
 
 
 

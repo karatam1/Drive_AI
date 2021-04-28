@@ -5,26 +5,30 @@ blocks = {}
 
 def board_init(ns, color_board):
     #--- Creates the initial colored board ---------------------------------------------------------------------------------------------------------------------
-    d1, d2 = 30, 16
+    d1, d2 = 60, 32
+
+    if ns > 20:
+        d1, d2 = 45, 24
+
     k1, k2 = ns, 1
-    x1, y1 = 30,0
-    x2, y2 = 60, 16
-    for i in range(16, 16*(ns+1), 16):
+    x1, y1 = d1,0
+    x2, y2 = d1*2, d2
+    for i in range(d2, d2*(ns+1), d2):
         #color_board.create_text(0, y1, 30, y2, fill = 'white')
-        color_board.create_text(14, y1+7, fill = 'black', text = 'y'+str(k1))
+        color_board.create_text(d2-2, y1+14, fill = 'black', text = 'y'+str(k1))
         k1-=1
-        for j in range(60, 30*(ns+2), 30):
+        for j in range(d1*2, d1*(ns+2), d1):
             color_board.create_rectangle(x1, y1, j, i, fill = 'grey')
 
-            x1+=30
-        y1+=16
-        x1 = 30
-        x2 = 60
-        y2+=16
+            x1+=d1
+        y1+=d2
+        x1 = d1
+        x2 = d1*2
+        y2+=d2
 
     #create numbered cols
-    for t in range(30, 30*(ns+1), 30):
-        color_board.create_text(t+14, y1+7, fill = 'black', text = 'x'+str(k2))
+    for t in range(d1, d1*(ns+1), d1):
+        color_board.create_text(t+16, y1+7, fill = 'black', text = 'x'+str(k2))
         k2+=1
 
     return color_board
@@ -148,7 +152,7 @@ def traffic_move(gen_board, rules):
 
 
 def board_gen(n, density):
-    # 0 representzs land
+    # 0 represents land
     # 1 represents road
     # 2 represents traffic
     # 9 is curr location
@@ -162,6 +166,17 @@ def board_gen(n, density):
     #do this in a while loop as long as it does not generate on a land cell or current location cell
     gen_board = traffic_gen(n, density, gen_board)
     
+    #adds the land to the board
+    gen_board = add_land(gen_board, n)
+
+    #sets the initial position
+    gen_board[n-1][0] = 9
+
+    return gen_board
+
+
+
+def add_land(gen_board, n):
 
     land = 4
     #sets the island size
@@ -182,20 +197,22 @@ def board_gen(n, density):
             j = 0
             i+=(land+1)
 
-    #sets the initial position
-    gen_board[n-1][0] = 9
-
     return gen_board
+
+
 
 def re_color_board(gen_board, color_board, n):
 
-    d1, d2 = 30, 16
+    d1, d2 = 60, 32
 
-    x1, y1 = 30,0
-    x2, y2 = 60, 16
+    if n > 20:
+        d1, d2 = 45, 24
+
+    x1, y1 = d1,0
+    x2, y2 = 2*d1, d2
     r, c = 0,0
-    for i in range(16, 16*(n+1), 16):
-        for j in range(60, 30*(n+2), 30):
+    for i in range(d2, d2*(n+1), d2):
+        for j in range(2*d1, d1*(n+2), d1):
             if gen_board[r][c] == 0:
                 color_board.create_rectangle(x1, y1, j, i, fill = 'green4')
 
@@ -210,24 +227,12 @@ def re_color_board(gen_board, color_board, n):
             
             else:
                 color_board.create_rectangle(x1, y1, j, i, fill = 'grey')
-            x1+=30
+            x1+=d1
             c+=1
-        y1+=16
-        x1 = 30
-        x2 = 60
+        y1+=d2
+        x1 = d1
+        x2 = d1*2
         c = 0
         r+=1
 
 
-
-# Create n*n board, each cell has an action
-# for i in range(ngens):
-    #generate_board()
-    
-    #calculate fitness
-            # running the simulation in n^2 runtime
-            # return the fitness
-    
-    #tournament
-    #crossover
-    #mutation

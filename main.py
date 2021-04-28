@@ -2,6 +2,7 @@ import tkinter as tk
 import random
 import SSS as st
 import GA as ga
+import nGA as na 
 import Board_Creator as bc
 import time
 
@@ -10,6 +11,17 @@ main_frame = tk.Tk()
 main_frame.geometry("7000x7000")
 main_frame.title("Drive_AI UI")
 main_frame.configure(bg = "SteelBlue1")
+
+
+
+def run_alg_nga(new_board, n, alg, color_board):
+    
+    rules = bc.traffic_rules_gen(new_board)
+    traffic = [color_board, rules]
+    
+
+    alg.start(main_frame, info_frame, new_board, bc, traffic)
+
 
 
 def run_alg_sss(new_board, n, alg, epoch, color_board):
@@ -72,11 +84,14 @@ def control():
 
 
     #holds ga initialization data: generations, string_length (17*20 rules), population size, p_mutation, p_crossover
-    ga_data = [50, 1300, 100, 0.05, 0.6]
+    ga_data = [1, 1200, 80, 0.06, 0.7]
 
     s1 = st.State_Space_Search(n, new_board)
 
     g1 = ga.Genetic_Alg(n, new_board, ga_data)
+
+    #na1 = na.nGA(n, new_board, 2, 100, 0.1, 0.7)
+
 
     #run sss
     if ai_method == 1:
@@ -87,6 +102,8 @@ def control():
     #run ga
     elif ai_method == 2:
         run_alg_ga(new_board, n, g1, color_board)
+        #run_alg_nga(new_board, n, na1, color_board)
+
     else:
         copy_board = new_board[:]
 
