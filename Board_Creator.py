@@ -14,7 +14,8 @@ def board_init(ns, color_board):
     x1, y1 = d1,0
     x2, y2 = d1*2, d2
     for i in range(d2, d2*(ns+1), d2):
-        #color_board.create_text(0, y1, 30, y2, fill = 'white')
+
+        #prints the y axis numbers
         color_board.create_text(d2-2, y1+14, fill = 'black', text = 'y'+str(k1))
         k1-=1
         for j in range(d1*2, d1*(ns+2), d1):
@@ -26,7 +27,7 @@ def board_init(ns, color_board):
         x2 = d1*2
         y2+=d2
 
-    #create numbered cols
+    #prints the x axis numbers
     for t in range(d1, d1*(ns+1), d1):
         color_board.create_text(t+16, y1+7, fill = 'black', text = 'x'+str(k2))
         k2+=1
@@ -214,16 +215,16 @@ def re_color_board(gen_board, color_board, n):
     for i in range(d2, d2*(n+1), d2):
         for j in range(2*d1, d1*(n+2), d1):
             if gen_board[r][c] == 0:
-                color_board.create_rectangle(x1, y1, j, i, fill = 'green4')
+                color_board.create_rectangle(x1, y1, j, i, fill = 'darkgreen')
 
             elif gen_board[r][c] == 9:
-                color_board.create_rectangle(x1, y1, j, i, fill = 'red3')
+                color_board.create_rectangle(x1, y1, j, i, fill = 'red')
             
             elif gen_board[r][c] == 2:
-                color_board.create_rectangle(x1, y1, j, i, fill = 'royal blue')
+                color_board.create_rectangle(x1, y1, j, i, fill = 'blue')
 
             elif gen_board[r][c] < 0:
-                color_board.create_rectangle(x1, y1, j, i, fill = 'DarkOrange1')
+                color_board.create_rectangle(x1, y1, j, i, fill = 'orange')
             
             else:
                 color_board.create_rectangle(x1, y1, j, i, fill = 'grey')

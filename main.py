@@ -5,43 +5,83 @@ import GA as ga
 import nGA as na 
 import Board_Creator as bc
 import time
+import matplotlib.pyplot as mp
 
 # GUI initializer
 main_frame = tk.Tk()
 main_frame.geometry("7000x7000")
 main_frame.title("Drive_AI UI")
-main_frame.configure(bg = "SteelBlue1")
-
-
-
-def run_alg_nga(new_board, n, alg, color_board):
-    
-    rules = bc.traffic_rules_gen(new_board)
-    traffic = [color_board, rules]
-    
-
-    alg.start(main_frame, info_frame, new_board, bc, traffic)
-
+main_frame.configure(bg = "White")
 
 
 def run_alg_sss(new_board, n, alg, epoch, color_board):
-        
+    
+    #creates text file
+    fds = open('sss_data.txt', 'a')
+
     rules = bc.traffic_rules_gen(new_board)
+    taken, v = [], 0
 
-    for i in range(epoch):
-        
-        if i % 5 == 0:
-            #generates new blocks every 5 iterations
-            new_board = bc.blocks_gen(new_board, n)
+    l5 = tk.Label(info_frame, text = "              Steps: ")
+    l5.grid(row = 0, column = 2)
 
-        new_board = bc.traffic_move(new_board, rules)
+    for j in range(epoch):
+        steps, v = 0, 0
+        #resets the agent position in the grid
+        alg.curr = [n-1, 0]
+        while v < n**2:
+            if v % 10 == 0:
+                #generates new blocks every 5 iterations
+                new_board = bc.blocks_gen(new_board, n)
+            #moves the traffic
+            new_board = bc.traffic_move(new_board, rules)
+            #moves the agent
+            new_board, curr = alg.move(new_board)
+         
+            #updates steps and check if it hit target
+            steps+=1
+            if curr[0] == 0 and curr[1] == n-1:
+                v = n**2
+
+            #decides when to color the board
+            if j in [0, epoch/2, epoch-1]: 
+                bc.re_color_board(new_board, color_board, n)
+                main_frame.update() #updates/refresh the main_frame
+                time.sleep(0.05)
+            v+=1
+
+        #stores the steps taken data
+        taken.append(steps)
         
-        new_board = alg.move(new_board)
-        
-        bc.re_color_board(new_board, color_board, n)
-        main_frame.update() #updates/refresh the main_frame
-        time.sleep(0.3)
-        
+        #resets the agents position
+        new_board[n-1][0] = 9
+        new_board[0][n-1] = 1
+
+        #updates the display values in the GUI
+        l8 = tk.Label(info_frame, text = str(j+1))
+        l9 = tk.Label(info_frame, text = str(steps))
+        l8.grid(row = 0, column = 1)
+        l9.grid(row = 0, column = 3, columnspan = 4)
+        info_frame.update()
+
+        #writes the data to the file
+        fds.write("Epoch " + str(j+1) + " Steps: " + str(steps) + "\n")
+    
+    #displays the plot at the end
+    #x array for plot
+    gen_arr = [h for h in range(1, epoch+1)]
+
+    fds.write("Min Steps: " + str(min(taken)) + " Max Steps: " + str(max(taken)) + " Avg Steps: " + str(sum(taken)/len(taken)) + "\n")
+    fds.write("\n")
+    fds.close()
+
+    #plots epochs vs max-fitness
+    mp.plot(gen_arr, taken) #epochs vs steps taken
+    mp.ylabel("Steps")
+    mp.xlabel("Epochs (generation)")
+    mp.title("Steps vs Epoch Plot")
+    mp.show()
+    
 
 def run_alg_ga(new_board, n, alg, color_board):
 
@@ -61,9 +101,9 @@ def run_alg_ga(new_board, n, alg, color_board):
 #processing functions
 def control():
     n, density, ai_method = size.get(), traf_dens.get(), alg.get()
-    color_frame = tk.Frame(main_frame, width = "7000", height = "4000", bg = "SteelBlue1")
+    color_frame = tk.Frame(main_frame, width = "7000", height = "4000", bg = "White")
     color_frame.grid(row = 4)
-    color_board = tk.Canvas(color_frame, borderwidth = 1, width = 7000, height = 4000, bg = "SteelBlue1")
+    color_board = tk.Canvas(color_frame, borderwidth = 1, width = 7000, height = 4000, bg = "White")
     color_board.grid(row = 0, column = 1)
     #creates the initial color_board
 
@@ -90,19 +130,17 @@ def control():
 
     g1 = ga.Genetic_Alg(n, new_board, ga_data)
 
-    #na1 = na.nGA(n, new_board, 2, 100, 0.1, 0.7)
+
 
 
     #run sss
     if ai_method == 1:
         #epoch = 25
-        epoch = n**2
-        run_alg_sss(new_board, n, s1, epoch, color_board)
+        run_alg_sss(new_board, n, s1, 100, color_board)
     
     #run ga
     elif ai_method == 2:
         run_alg_ga(new_board, n, g1, color_board)
-        #run_alg_nga(new_board, n, na1, color_board)
 
     else:
         copy_board = new_board[:]
@@ -116,7 +154,7 @@ def control():
 
 ###################################################################################################################################################################
 #grid allocations
-head_frame = tk.Frame(main_frame, width = "7000", height = "50", bg = "SteelBlue1")
+head_frame = tk.Frame(main_frame, width = "7000", height = "50", bg = "White")
 input_frame = tk.Frame(main_frame, width = "7000", height = "200")
 info_frame = tk.Frame(main_frame, width = "7000", height = "25")
 
@@ -126,7 +164,7 @@ info_frame.grid(row = 3, sticky = "nw")
 
 
 #labels 
-l1 = tk.Label(head_frame, text = "Choose the settings from the given options", bg = "SteelBlue1")
+l1 = tk.Label(head_frame, text = "Choose the settings from the given options", bg = "White")
 l2 = tk.Label(input_frame, text = "Grid Size:")
 l3 = tk.Label(input_frame, text = "Density:")
 l4 = tk.Label(info_frame, text = "Epoch # ")

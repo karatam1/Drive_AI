@@ -20,13 +20,13 @@ class State_Space_Search:
             dir = self.min_cost()
             if dir == "u":
                 i = self.go_up(self.curr)
-                print("Going up")
+                #print("Going up")
             elif dir == "r":
                 j = self.go_right(self.curr)
-                print("Going right")
+                #print("Going right")
             elif dir == "l":
                 j = self.go_left(self.curr)
-                print("Going left")
+                #print("Going left")
             else:
                pass
 
@@ -40,7 +40,8 @@ class State_Space_Search:
             #important - update curr after finalizing move
             self.curr = [i, j]
 
-        return self.gen_board
+        return self.gen_board, self.curr
+
 
     def go_right(self, curr):
         i, j = curr[0], curr[1]
@@ -67,7 +68,7 @@ class State_Space_Search:
         l = self.left_cost()
         u = self.up_cost()
 
-        print("r : " + str(r) + ",l : " + str(l) + ",u : " + str(u))
+        #print("r : " + str(r) + ",l : " + str(l) + ",u : " + str(u))
 
         m = min([r, l, u])
 
@@ -286,3 +287,4 @@ class State_Space_Search:
                 pass
 
         return cost - 2
+        

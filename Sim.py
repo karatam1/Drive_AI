@@ -89,18 +89,9 @@ class Sim:
             #checks if no rule found
             if first_rule == []:
                 #take random action among [up, left, right, wait]
-                #orient = 'U'
                 orient = random.sample(['U', 'L', 'R', 'D'], 1)[0]
                 act = random.sample(['Up', 'Ri', 'Le' 'Wi'], 1)[0]
-                #checks if up is available
-
-                # if 0 <= i <= self.n-1 and 0 <= j+1 <= self.n-1:
-                #     if board[i][j+1] == 1:
-                #         act = 'Ri'
-
-                # if 0 <= i-1 <= self.n-1 and 0 <= j <= self.n-1:
-                #     if board[i-1][j] == 1:
-                #         act = 'Up'
+                
 
             #rule was found
             else:
@@ -192,23 +183,7 @@ class Sim:
 
     def FOV(self, i, j, orient, board):
 
-        ret = []
-        # #agent is not at the edge
-        # if 1 <= i < self.n-1 and 1 <= j < self.n-1:
-        #     if orient == 'U':
-        #         return self.field_conv([board[i][j-1], board[i-1][j-1], board[i-1][j], board[i-1][j+1], board[i][j+1]])
-
-        #     elif orient == 'L':
-        #         return self.field_conv([board[i+1][j], board[i+1][j-1], board[i][j-1], board[i-1][j-1], board[i-1][j]])
-
-        #     elif orient == 'R':
-        #         return self.field_conv([board[i-1][j], board[i-1][j+1], board[i][j+1], board[i+1][j+1], board[i+1][j]])
-
-        #     elif orient == 'D':
-        #         return self.field_conv([board[i][j+1], board[i+1][j+1], board[i+1][j], board[i+1][j-1], board[i][j-1]])
-        
-        #else: #agent is at an edge
-        arr = []
+        ret, arr = [], []
         if orient == 'U':
             arr = [[0, -1], [-1, -1], [-1, 0], [-1, 1], [0,1]]
         elif orient == 'L':
@@ -241,7 +216,6 @@ class Sim:
             elif r < 0: # it is some sort of traffic block
                 ret+=[0, 1, 1]
             elif r == 5: # it is a wall
-                #print("matched a wall")
                 ret+=[1, 0, 0]
         return ret
 
@@ -250,7 +224,6 @@ class Sim:
 
         for i in range(0, len(chromosome), 17):
             if field == (chromosome[i:i+15]):
-                #print("rule matched")
                 return chromosome[i:i+17]
         return []
 

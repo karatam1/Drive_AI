@@ -60,7 +60,7 @@ class Genetic_Alg:
             #fit_arr contains the fitness of the population for the current generation,   len(fit_arr) == pop_size    
             fit_arr, hits = self.fitness(main_frame, bc, traffic, show)
         
-
+            #updates the display values of the GUI
             l8 = tk.Label(info_frame, text = str(g+1))
             l9 = tk.Label(info_frame, text = str(max(fit_arr)))
             l8.grid(row = 0, column = 1)#line 3 left
@@ -70,7 +70,7 @@ class Genetic_Alg:
 
             #writes to the file
             fd.write("Epoch " + str(g+1) + " Max-fitness: " + str(max(fit_arr)) + " Avg. Fitness: " + str(sum(fit_arr)/len(fit_arr)) + " Hits: " +str(hits)+ "\n")
-            #print("Epoch " + str(g+1) + " Max-fitness: " + str(max(fit_arr)) + " Avg. Fitness: " + str(sum(fit_arr)/len(fit_arr)) + " Hits: " +str(hits)+ "\n")
+            
             opt_arr.append(max(fit_arr))
 
             #create a new empty population, this will under-go repopulation based on the fitness of the old population
@@ -106,12 +106,6 @@ class Genetic_Alg:
         fd.close()
 
 
-        # for x in self.population:
-        #     for i in range(0, len(x), 12):
-        #         print(self.re_code(list(x[i:i+12])))
-        #     print()
-
-
         print("Program Complete")
 
         #x array for plot
@@ -123,33 +117,6 @@ class Genetic_Alg:
         mp.xlabel("Epochs (generation)")
         mp.title("Optimization Plot")
         mp.show()
-
-
-
-
-    def re_code(self, arr):
-
-        ret = []
-        for i in range(0, len(arr)-2, 2):
-            if arr[i:i+2] == [0,0]:
-                ret.append('land')
-            elif arr[i:i+2] == [0,1]:
-                ret.append('road')
-            elif arr[i:i+2] == [1,0]:
-                ret.append('traffic')
-            elif arr[i:i+2] == [1,1]:
-                ret.append('block')
-        
-        if arr[-2:] == [0,0]:
-            ret.append("action = up")
-        elif arr[-2:] == [0,1]:
-            ret.append("action = left")
-        elif arr[-2:] == [1,0]:
-            ret.append("action = right")
-        elif arr[-2:] == [1,1]:
-            ret.append("action = wait")
-
-        return ret   
 
 
 
@@ -177,10 +144,10 @@ class Genetic_Alg:
             steps, hit, match = sim.simulator(self.gen_board, rules, bc, list(self.population[i]), main_frame, color_board, show_now)
             target+=hit
             vals[i] = steps
-            if match != 0:
-                match_arr.append(match)
 
-        print(len(match_arr))
+            match_arr.append(match)
+
+        print(match_arr)
         return vals, target
 
 
